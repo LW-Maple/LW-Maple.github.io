@@ -1,207 +1,352 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MyWorld - 漫漫长夜</title><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="专注于Web,记录学习过程,提升自我！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyWorld">
+<meta property="og:url" content="https://lw-maple.github.io/index.html">
+<meta property="og:site_name" content="MyWorld">
+<meta property="og:description" content="专注于Web,记录学习过程,提升自我！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/avatar.jpg">
+<meta property="article:author" content="Lost丶逝水如风">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MyWorld',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-08-07 22:34:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.2.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/07/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-08-07T12:54:19.380Z" itemprop="datePublished">2022-08-07</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/07/hello-world/">Hello World</a>
-    </h1>
-  
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MyWorld</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyWorld</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/LW-Maple" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maplewcw@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/07/2022-7-20-%E3%80%90MySql%E9%AB%98%E7%BA%A7%E3%80%91/" title="MySql高级"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql高级"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-20-%E3%80%90MySql%E9%AB%98%E7%BA%A7%E3%80%91/" title="MySql高级">MySql高级</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.966Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">索引索引概述索引的本质：索引是数据结构。你可以简单理解为“排好序的快速查找数据结构”，满足特定查找算法。 这些数据结构以某种方式指向数据， 这样就可以在这些数据结构的基础上实现高级查找算法 。
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/07/hello-world/" data-id="cl6jcgh9c0000zgwb105s3fc0" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+优点
+（1）类似大学图书馆建书目索引，提高数据检索的效率，降低数据库的IO成本 ，这也是创建索引最主要的原因。
+（2）通过创建唯一索引，可以保证数据库表中每一行 数据的唯一性 。 
+（3）在实现数据的 参考完整性方面，可以加速表和表之间的连接 。换句话说，对于有依赖关系的子表和父表联合查询时， 可以提高查询速度。 
+（4）在使用分组和排序子句进行数据查询时，可以显著 减少查询中分组和排序的时 间 ，降低了CPU的消耗。
 
 
+缺点
+（1）创建索引和维护索引要耗费时间 ，并且随着数据量的增加，所耗费的时间也会增加。 
+（2）索引需要占磁盘空间 ，除了数据表占数据空间之 外，每一个索引还要占一定的物理空间， 存储在磁盘上 ，如果有大量的索引，索引文件就可能比数据文 件更快达到最大文件尺寸。 
+（3）虽然索引大大提高了查询速度，同时却会降低更新表的速度 。当对表 中的数据进行增加、删除和修改的时候，索 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/07/2022-7-20-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6)%E3%80%91/" title="LeetCode百题【每日温度】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【每日温度】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-20-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6)%E3%80%91/" title="LeetCode百题【每日温度】">LeetCode百题【每日温度】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.964Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。
+ 示例 1: 
+12输入: temperatures = [73,74,75,71,69,72,76,73]输出: [1,1,4,2,1,1,0,0]
 
-  
+ 示例 2: 
+12输入: temperatures = [30,40,50,60]输出: [1,1,1,0]
 
+ 示例 3: 
+12输入: temperatures = [30,60,90]输出: [1,1,0]
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+ 提示： 
 
-  
-    
+1 &lt;= temperatures.length &lt;= 10^5
+30 &lt;= temperatures[i] &lt;= 100
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/08/07/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+解法
+单调栈
+维护递减栈，后入栈的元素总比栈顶元素小。
+若当前元素 &lt; 栈顶元素：入栈
+若当前元素 &gt; 栈顶元素：弹出栈顶元素，记录两者下标差值即为所求天数，这里用栈记录的是 T 的下标。
 
 
 
 
 
-  </div>
-</body>
-</html>
+12345678910 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/07/2022-7-19-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81)%E3%80%91/" title="LeetCode百题【字符串解码】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【字符串解码】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-19-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81)%E3%80%91/" title="LeetCode百题【字符串解码】">LeetCode百题【字符串解码】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.962Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给定一个经过编码的字符串，返回它解码后的字符串。
+编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。
+你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。
+此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4] 的输入。
+ 示例 1： 
+12输入：s = &quot;3[a]2[bc]&quot;输出：&quot;aaabcbc&quot;
+
+ 示例 2： 
+12输入：s = &quot;3[a2[c]]&quot;输出：&quot;accaccacc&quot;
+
+ 示例 3： 
+12输入：s = &quot;2[abc]3[cd]ef&quot;输出：&quot;abcabccdcdcdef&quot;
+
+ 示例 4： 
+12输入：s = &quot;abc3[cd]xyz&quot;输出：&quot;abccdcdcdxyz&quot;
+
+ 提示： 
+
+1 &lt;= s.length & ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/07/2022-7-18-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%89%8D%20K%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0)%E3%80%91%20/" title="LeetCode百题【前 K 个高频元素】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【前 K 个高频元素】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-18-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%89%8D%20K%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0)%E3%80%91%20/" title="LeetCode百题【前 K 个高频元素】">LeetCode百题【前 K 个高频元素】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.960Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按  任意顺序  返回答案。
+ 示例 1: 
+12输入: nums = [1,1,1,2,2,3], k = 2输出: [1,2]
+
+ 示例 2: 
+12输入: nums = [1], k = 1输出: [1]
+
+ 提示： 
+
+1 &lt;= nums.length &lt;= 10^5
+k 的取值范围是 [1, 数组中不相同的元素的个数]
+题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的
+
+ 进阶： 你所设计算法的时间复杂度  必须  优于 O(n log n) ，其中 n 是数组大小。
+解法
+堆
+首先遍历整个数组，并使用哈希表记录每个数字出现的次数，并形成一个「出现次数数组」
+建立一个小顶堆，然后遍历「出现次数数组」：
+如果堆的元素个数小于 k，就可以直接插入堆中。
+如果堆的元素个数等于 k，则检查堆顶与当前出现次数的大小。如果堆顶更大，说明至少有 k个数字的出现次数比当前值大，故舍弃当前值；否则，就弹出堆顶，并将当前值插入堆中。
+
+
+
+
+
+12345678910 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/07/2022-7-16-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2)%E3%80%91/" title="LeetCode百题【零钱兑换】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【零钱兑换】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-16-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2)%E3%80%91/" title="LeetCode百题【零钱兑换】">LeetCode百题【零钱兑换】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.958Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。
+计算并返回可以凑成总金额所需的  最少的硬币个数  。如果没有任何一种硬币组合能组成总金额，返回 -1 。
+你可以认为每种硬币的数量是无限的。
+ 示例 1： 
+123输入：coins = [1, 2, 5], amount = 11输出：3 解释：11 = 5 + 5 + 1
+
+ 示例 2： 
+12输入：coins = [2], amount = 3输出：-1
+
+ 示例 3： 
+12输入：coins = [1], amount = 0输出：0
+
+ 提示： 
+
+1 &lt;= coins.length &lt;= 12
+1 &lt;= coins[i] &lt;= 2^31 - 1
+0 &lt;= amount &lt;= 10^4
+
+解法
+动态规划
+
+定义dp[i]为组成金额 i 所需最少的硬币数量
+动态转移方程为
+
+
+
+即我们枚举最后一枚硬币面额是coin，那么需要从dp[i-coin]这个金额的状态转移过来,再算上枚举的这枚硬币数量1的贡献
+由于要硬币数量最少，所以dp[i]为前 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/07/2022-7-15-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97)%E3%80%91/" title="LeetCode百题【最长递增子序列】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【最长递增子序列】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-15-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97)%E3%80%91/" title="LeetCode百题【最长递增子序列】">LeetCode百题【最长递增子序列】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.957Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+ 子序列  是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+ 示例 1： 
+123输入：nums = [10,9,2,5,3,7,101,18]输出：4解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。
+
+ 示例 2： 
+12输入：nums = [0,1,0,3,2,3]输出：4
+
+ 示例 3： 
+12输入：nums = [7,7,7,7,7,7,7]输出：1
+
+ 提示： 
+
+1 &lt;= nums.length &lt;= 2500
+-10^4 &lt;= nums[i] &lt;= 10^4
+
+进阶：
+
+你能将算法的时间复杂度降低到 O(n log(n)) 吗?
+
+解法
+动态规划
+
+定义dp[i]为考虑前 i个元素，以第 i 个数字结尾的最长上升子序列的长度
+那么有动态转移方程
+
+$$dp[i]&#x3D;max(dp[j])+1,其中0≤j&lt;i且num[j]&lt;num[i]$ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/07/2022-7-14-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0)%E3%80%91/" title="LeetCode百题【寻找重复数】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【寻找重复数】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-14-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0)%E3%80%91/" title="LeetCode百题【寻找重复数】">LeetCode百题【寻找重复数】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.955Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给定一个包含 n + 1 个整数的数组 nums ，其数字都在 [1, n] 范围内（包括 1 和 n），可知至少存在一个重复的整数。
+假设 nums 只有  一个重复的整数  ，返回  这个重复的数  。
+你设计的解决方案必须  不修改  数组 nums 且只用常量级 O(1) 的额外空间。
+ 示例 1： 
+12输入：nums = [1,3,4,2,2]输出：2
+
+ 示例 2： 
+12输入：nums = [3,1,3,4,2]输出：3
+
+ 提示： 
+
+1 &lt;= n &lt;= 10^5
+nums.length == n + 1
+1 &lt;= nums[i] &lt;= n
+nums 中  只有一个整数  出现  两次或多次  ，其余整数均只出现  一次
+
+进阶：
+
+如何证明 nums 中至少存在一个重复的数字?
+你可以设计一个线性级时间复杂度 O(n) 的解决方案吗？
+
+解法
+排序
+
+1234567891011121314class Solution &#123;    public int findDuplicate(int[] nums) &#123;       ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/07/2022-7-12-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF)%E3%80%91/" title="LeetCode百题【除自身以外数组的乘积】"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【除自身以外数组的乘积】"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/07/2022-7-12-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF)%E3%80%91/" title="LeetCode百题【除自身以外数组的乘积】">LeetCode百题【除自身以外数组的乘积】</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-07T13:31:01.953Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></span></div><div class="content">题目描述给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积 。
+题目数据  保证  数组 nums之中任意元素的全部前缀元素和后缀的乘积都在   32 位  整数范围内。
+请 不要使用除法， 且在 O(_n_) 时间复杂度内完成此题。
+ 示例 1: 
+12输入: nums = [1,2,3,4]输出: [24,12,8,6]
+
+ 示例 2: 
+12输入: nums = [-1,1,0,-3,3]输出: [0,0,9,0,0]
+
+ 提示： 
+
+2 &lt;= nums.length &lt;= 10^5
+-30 &lt;= nums[i] &lt;= 30
+保证  数组 nums之中任意元素的全部前缀元素和后缀的乘积都在   32 位  整数范围内
+
+ 进阶： 你可以在 O(1) 的额外空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组 不被视为 额外空间。）
+解法
+前后缀之积
+前缀：索引元素前的所有元素
+后缀：索引元素后的所有元素
+结果：前缀之积*后缀之积
+
+
+动态转移方程
+定义 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/07/12/2022-7-12-%E3%80%90Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%91/" title="设计模式学习"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计模式学习"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/12/2022-7-12-%E3%80%90Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%91/" title="设计模式学习">设计模式学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-12T08:54:32.000Z" title="发表于 2022-07-12 16:54:32">2022-07-12</time></span></div><div class="content">设计模式简介什么是设计模式？
+在软件工程中，设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语是由埃里希·伽玛（Erich Gamma）等人在 1990 年代从建筑设计领域引入到计算机科学的
+
+
+设计模式的目的?
+编写软件过程中，程序员面临着来自耦合性，内聚性以及可维护性，可扩展性，重用性，灵活性等多方面的挑战，设计模式是为了让程序(软件)，具有更好的
+代码重用性 (即：相同功能的代码，不用多次编写) 
+可读性 (即：编程规范性, 便于其他程序员的阅读和理解) 
+可扩展性 (即：当需要增加新的功能时，非常的方便，称为可维护) 
+可靠性 (即：当我们增加新的功能后，对原来的功能没有影响) 
+使程序呈现高内聚，低耦合的特性
+
+
+
+
+设计模式包含了面向对象的精髓，“懂了设计模式，你就懂了面向对象分析和设计（OOA&#x2F;D）的精要”
+
+
+设计模式的七大原则
+设计模式原则，其实就是程序员在编程时，应当遵守的原则，也是各种设计模式的基础(即：设计模式为什么 这样设计的依据)
+
+单一职责原则
+
+
+
+接口隔离原则
+
+
+
+依赖倒转(倒置 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lost丶逝水如风</div><div class="author-info__description">专注于Web,记录学习过程,提升自我！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LW-Maple" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maplewcw@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/07/2022-7-20-%E3%80%90MySql%E9%AB%98%E7%BA%A7%E3%80%91/" title="MySql高级"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql高级"/></a><div class="content"><a class="title" href="/2022/08/07/2022-7-20-%E3%80%90MySql%E9%AB%98%E7%BA%A7%E3%80%91/" title="MySql高级">MySql高级</a><time datetime="2022-08-07T13:31:01.966Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/07/2022-7-20-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6)%E3%80%91/" title="LeetCode百题【每日温度】"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【每日温度】"/></a><div class="content"><a class="title" href="/2022/08/07/2022-7-20-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6)%E3%80%91/" title="LeetCode百题【每日温度】">LeetCode百题【每日温度】</a><time datetime="2022-08-07T13:31:01.964Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/07/2022-7-19-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81)%E3%80%91/" title="LeetCode百题【字符串解码】"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【字符串解码】"/></a><div class="content"><a class="title" href="/2022/08/07/2022-7-19-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81)%E3%80%91/" title="LeetCode百题【字符串解码】">LeetCode百题【字符串解码】</a><time datetime="2022-08-07T13:31:01.962Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/07/2022-7-18-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%89%8D%20K%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0)%E3%80%91%20/" title="LeetCode百题【前 K 个高频元素】"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【前 K 个高频元素】"/></a><div class="content"><a class="title" href="/2022/08/07/2022-7-18-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%89%8D%20K%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0)%E3%80%91%20/" title="LeetCode百题【前 K 个高频元素】">LeetCode百题【前 K 个高频元素】</a><time datetime="2022-08-07T13:31:01.960Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/07/2022-7-16-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2)%E3%80%91/" title="LeetCode百题【零钱兑换】"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode百题【零钱兑换】"/></a><div class="content"><a class="title" href="/2022/08/07/2022-7-16-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2)%E3%80%91/" title="LeetCode百题【零钱兑换】">LeetCode百题【零钱兑换】</a><time datetime="2022-08-07T13:31:01.958Z" title="发表于 2022-08-07 21:31:01">2022-08-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-08-07T14:34:07.130Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
