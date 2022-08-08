@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>LeetCode百题【排序链表】 | 漫漫长夜</title><meta name="keywords" content="🔥 LeetCode 热题 HOT 100"><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目描述给你链表的头结点 head ，请将其按  升序  排列并返回  排序后的链表  。  示例 1：   12输入：head &#x3D; [4,2,1,3]输出：[1,2,3,4]   示例 2：   12输入：head &#x3D; [-1,5,3,4,0]输出：[-1,0,3,4,5]   示例 3：  12输入：head &#x3D; []输出：[]  提示：  链表中节点的数目在范围 [0, 5 * 10^4]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode百题【排序链表】">
+<meta property="og:url" content="https://lw-maple.github.io/2022/07/05/2022-7-5-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8)%E3%80%91/index.html">
+<meta property="og:site_name" content="漫漫长夜">
+<meta property="og:description" content="题目描述给你链表的头结点 head ，请将其按  升序  排列并返回  排序后的链表  。  示例 1：   12输入：head &#x3D; [4,2,1,3]输出：[1,2,3,4]   示例 2：   12输入：head &#x3D; [-1,5,3,4,0]输出：[-1,0,3,4,5]   示例 3：  12输入：head &#x3D; []输出：[]  提示：  链表中节点的数目在范围 [0, 5 * 10^4]">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/coverImg/12.jpg">
+<meta property="article:published_time" content="2022-07-05T03:34:10.000Z">
+<meta property="article:modified_time" content="2022-08-08T02:54:06.407Z">
+<meta property="article:author" content="Lost丶逝水如风">
+<meta property="article:tag" content="🔥 LeetCode 热题 HOT 100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/coverImg/12.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/2022/07/05/2022-7-5-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8)%E3%80%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LeetCode百题【排序链表】',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-08 10:54:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/atom-one-dark.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cn-jsnt-dx-live-07.bilivideo.com/upgcxcode/99/91/137649199/137649199_u2-1-208.mp4?e=ig8euxZM2rNcNbKV7bdVhwdl7wdjhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&amp;uipk=5&amp;nbs=1&amp;deadline=1659968126&amp;gen=playurlv2&amp;os=bcache&amp;oi=17808763&amp;trid=0000645ca3a34c9748c3b17956a904428224T&amp;mid=0&amp;platform=html5&amp;upsig=4d0befd49988d64b2e9e72b0911939b0&amp;uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&amp;cdnid=14707&amp;bvc=vod&amp;nettype=0&amp;bw=407108&amp;orderid=0,1&amp;logo=80000000"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/coverImg/12.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫漫长夜</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cn-jsnt-dx-live-07.bilivideo.com/upgcxcode/99/91/137649199/137649199_u2-1-208.mp4?e=ig8euxZM2rNcNbKV7bdVhwdl7wdjhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&amp;uipk=5&amp;nbs=1&amp;deadline=1659968126&amp;gen=playurlv2&amp;os=bcache&amp;oi=17808763&amp;trid=0000645ca3a34c9748c3b17956a904428224T&amp;mid=0&amp;platform=html5&amp;upsig=4d0befd49988d64b2e9e72b0911939b0&amp;uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&amp;cdnid=14707&amp;bvc=vod&amp;nettype=0&amp;bw=407108&amp;orderid=0,1&amp;logo=80000000"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LeetCode百题【排序链表】</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-05T03:34:10.000Z" title="发表于 2022-07-05 11:34:10">2022-07-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-08T02:54:06.407Z" title="更新于 2022-08-08 10:54:06">2022-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Leetcode/">Leetcode</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">614</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LeetCode百题【排序链表】"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你链表的头结点 <code>head</code> ，请将其按  <strong>升序</strong>  排列并返回  <strong>排序后的链表</strong>  。</p>
+<p> <strong>示例 1：</strong> </p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/14/sort_list_1.jpg"></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：head = [<span class="hljs-number">4,2,1,3</span>]<br>输出：[<span class="hljs-number">1,2,3,4</span>]<br></code></pre></td></tr></table></figure>
+
+<p> <strong>示例 2：</strong> </p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/14/sort_list_2.jpg"></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：head = [-<span class="hljs-number">1,5,3,4</span>,<span class="hljs-number">0</span>]<br>输出：[-<span class="hljs-number">1,0,3,4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+
+<p> <strong>示例 3：</strong> </p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：head = <span class="hljs-comment">[]</span><br>输出：<span class="hljs-comment">[]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表中节点的数目在范围 <code>[0, 5 * 10^4]</code> 内</li>
+<li><code>-10^5 &lt;= Node.val &lt;= 10^5</code></li>
+</ul>
+<p><strong>进阶：</strong>你可以在 <code>O(n log n)</code> 时间复杂度和常数级空间复杂度下，对链表进行排序吗？</p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><ul>
+<li>归并排序<ul>
+<li>找到链表的中点，以中点为分界，<strong>将链表拆分成两个子链表</strong>。<ul>
+<li>寻找链表的中点可以使用快慢指针的做法，快指针每次移动 2 步，慢指针每次移动 11步，当快指针到达链表末尾时，<strong>慢指针指向的链表节点即为链表的中点。</strong></li>
+</ul>
+</li>
+<li>对两个子链表分别排序。</li>
+<li>将两个排序后的子链表合并，得到完整的排序后的链表。可以使用「合并两个有序链表」的做法，将两个有序的子链表进行合并。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">sortList</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-keyword">return</span> sortList(head, <span class="hljs-literal">null</span>);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 找到中间数分解为两个有序链表后合并</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> head 头结点</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> tail 尾结点</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">sortList</span><span class="hljs-params">(ListNode head,ListNode tail)</span>&#123;<br>        <span class="hljs-comment">//1.定义递归出口</span><br>        <span class="hljs-keyword">if</span> (head==<span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> head;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (head.next==tail)&#123;<br>            head.next=<span class="hljs-literal">null</span>;<br>            <span class="hljs-keyword">return</span> head;<br>        &#125;<br>        <span class="hljs-comment">//2.寻找中点，快慢指针</span><br>        <span class="hljs-comment">//快的速度为2，慢的速度为1，快的走完后，慢的指向中点</span><br>        ListNode slow=head;<br>        ListNode fast=head;<br>        <span class="hljs-keyword">while</span> (fast!=tail)&#123;<br>            slow=slow.next;<br>            fast=fast.next;<br>            <span class="hljs-keyword">if</span> (fast!=tail)&#123;<br>                fast=fast.next;<br>            &#125;<br>        &#125;<br>        ListNode mid=slow;<br>        <span class="hljs-comment">//3.一分为二，进行递归</span><br>        ListNode list1=sortList(head, mid);<br>        ListNode list2=sortList(mid, tail);<br>        <span class="hljs-comment">//4.进行两条有序链表合并</span><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">sorted</span> <span class="hljs-operator">=</span> merge(list1, list2);<br>        <span class="hljs-keyword">return</span> sorted;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 合并两条有序的链表，简单迭代</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> list1</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> list2</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 合并后有序的链表</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">merge</span><span class="hljs-params">(ListNode list1,ListNode list2)</span>&#123;<br>        ListNode pre=<span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>(-<span class="hljs-number">1</span>);<span class="hljs-comment">//存放先前的值</span><br>        ListNode head=pre;<span class="hljs-comment">//头指针，用于返回</span><br>        <span class="hljs-keyword">while</span>(list1!=<span class="hljs-literal">null</span>&amp;&amp;list2!=<span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-comment">//都没有遍历完</span><br>            <span class="hljs-keyword">if</span> (list1.val&lt;list2.val)&#123;<br>                pre.next=list1;<br>                list1=list1.next;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                pre.next=list2;<br>                list2=list2.next;<br>            &#125;<br>            pre=pre.next;<br>        &#125;<br>        <span class="hljs-comment">//任意一条遍历完后，剩下的直接接上</span><br>        <span class="hljs-keyword">if</span> (list1==<span class="hljs-literal">null</span>)&#123;<br>            pre.next=list2;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            pre.next=list1;<br>        &#125;<br>        <span class="hljs-keyword">return</span> head.next;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>时间复杂度：O(n)</li>
+</ul>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-list/">148. 排序链表 - 力扣（LeetCode）</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://lw-maple.github.io">Lost丶逝水如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lw-maple.github.io/2022/07/05/2022-7-5-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8)%E3%80%91/">https://lw-maple.github.io/2022/07/05/2022-7-5-【LeetCode百题(排序链表)】/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lw-maple.github.io" target="_blank">漫漫长夜</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%F0%9F%94%A5-LeetCode-%E7%83%AD%E9%A2%98-HOT-100/">🔥 LeetCode 热题 HOT 100</a></div><div class="post_share"><div class="social-share" data-image="/img/coverImg/12.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/06/2022-7-21-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D)%E3%80%91/"><img class="prev-cover" src="/img/coverImg/21.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">LeetCode百题【找到字符串中所有字母异位词】</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/03/2022-7-3-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(LRU%20%E7%BC%93%E5%AD%98)%E3%80%91/"><img class="next-cover" src="/img/coverImg/9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">LeetCode百题【LRU 缓存】</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/17/2022-1-17-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C)%E3%80%91/" title="LeetCode百题【两数之和】"><img class="cover" src="/img/coverImg/12.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-17</div><div class="title">LeetCode百题【两数之和】</div></div></a></div><div><a href="/2022/01/18/2022-1-18-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0)%E3%80%91/" title="LeetCode百题【两数相加】"><img class="cover" src="/img/coverImg/13.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-18</div><div class="title">LeetCode百题【两数相加】</div></div></a></div><div><a href="/2022/01/20/2022-1-20-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84)%E3%80%91/" title="LeetCode百题【合并两个有序数组】"><img class="cover" src="/img/coverImg/23.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">LeetCode百题【合并两个有序数组】</div></div></a></div><div><a href="/2022/01/19/2022-1-19-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2)%E3%80%91/" title="LeetCode百题【无重复字符的最长子串】"><img class="cover" src="/img/coverImg/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-19</div><div class="title">LeetCode百题【无重复字符的最长子串】</div></div></a></div><div><a href="/2022/01/23/2022-1-23-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2)%E3%80%91/" title="LeetCode百题【回文子串】"><img class="cover" src="/img/coverImg/15.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-23</div><div class="title">LeetCode百题【回文子串】</div></div></a></div><div><a href="/2022/03/19/2022-3-19-%E3%80%90LeetCode%E7%99%BE%E9%A2%98(%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91)%E3%80%91/" title="LeetCode百题【将有序数组转换为二叉搜索树】"><img class="cover" src="/img/coverImg/4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-19</div><div class="title">LeetCode百题【将有序数组转换为二叉搜索树】</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">解法</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
