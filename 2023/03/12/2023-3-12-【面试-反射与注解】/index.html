@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>面试-反射与注解 | 漫漫长夜</title><meta name="keywords" content="Java"><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="反射在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性，这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。 反射的作用 动态获取：动态获取类或对象的属性和方法 动态调用：动态调用对象的属性和方法  反射的优缺点？ 反射可以让我们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利。 不过，反射让我们在运行时有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试-反射与注解">
+<meta property="og:url" content="https://lw-maple.github.io/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%8F%8D%E5%B0%84%E4%B8%8E%E6%B3%A8%E8%A7%A3%E3%80%91/index.html">
+<meta property="og:site_name" content="漫漫长夜">
+<meta property="og:description" content="反射在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性，这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。 反射的作用 动态获取：动态获取类或对象的属性和方法 动态调用：动态调用对象的属性和方法  反射的优缺点？ 反射可以让我们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利。 不过，反射让我们在运行时有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/coverImg/16.jpg">
+<meta property="article:published_time" content="2023-03-12T03:11:44.000Z">
+<meta property="article:modified_time" content="2023-03-12T04:28:28.465Z">
+<meta property="article:author" content="Lost丶逝水如风">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/coverImg/16.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%8F%8D%E5%B0%84%E4%B8%8E%E6%B3%A8%E8%A7%A3%E3%80%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试-反射与注解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-12 12:28:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/atom-one-dark.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/coverImg/16.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫漫长夜</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试-反射与注解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-12T03:11:44.000Z" title="发表于 2023-03-12 11:11:44">2023-03-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-12T04:28:28.465Z" title="更新于 2023-03-12 12:28:28">2023-03-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试-反射与注解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性，这种<strong>动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</strong></p>
+<h2 id="反射的作用"><a href="#反射的作用" class="headerlink" title="反射的作用"></a>反射的作用</h2><ul>
+<li>动态获取：动态获取类或对象的属性和方法</li>
+<li>动态调用：动态调用对象的属性和方法</li>
+</ul>
+<h2 id="反射的优缺点？"><a href="#反射的优缺点？" class="headerlink" title="反射的优缺点？"></a>反射的优缺点？</h2><ul>
+<li>反射可以让我们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利。</li>
+<li>不过，反射让我们在运行时有了分析操作类的能力的同时，也增加了安全问题</li>
+<li>通过反射我们可以实现动态装配，降低代码的耦合度,动态代理等。</li>
+</ul>
+<h2 id="反射的应用场景？"><a href="#反射的应用场景？" class="headerlink" title="反射的应用场景？"></a>反射的应用场景？</h2><ul>
+<li>数据库驱动：根据实际情况加载驱动类</li>
+<li>Web服务器中利用反射调用了Sevlet的服务方法。</li>
+<li>Eclispe等开发工具利用反射动态刨析对象的类型与结构，动态提示对象的属性和方法。 </li>
+<li>主流框架：除此之外还有很多Java开发框 架：Mybatis、Dubbo、Rocketmq等等都会 用到Java反射机制。<ul>
+<li>Spring IOC：Spring IOC 通过配置文件配 置各种各样的bean，你需要用到哪些bean就 配哪些，这里会涉及到Java反射。 </li>
+<li>Spring AOP：Spring AOP的Java动态代理功能，都和Java反射有关系。</li>
+</ul>
+</li>
+</ul>
+<h2 id="反射的工作原理？"><a href="#反射的工作原理？" class="headerlink" title="反射的工作原理？"></a>反射的工作原理？</h2><p>1.原文件编译为class文件</p>
+<p>2.字节码文件被类加载器加载到JVM中</p>
+<p>3.当一个类被加载后JVM会在内存中自动产生一个Class对象</p>
+<p>4.通过Class对象获取相应的信息</p>
+<h2 id="反射的效率？"><a href="#反射的效率？" class="headerlink" title="反射的效率？"></a>反射的效率？</h2><p>通过new创建对象的效率比较高。</p>
+<p>通过反射时，先找查找类资源，使用类加载器创建，过程比较繁琐，</p>
+<p>所以效率较低</p>
+<h2 id="反射的实现方式？"><a href="#反射的实现方式？" class="headerlink" title="反射的实现方式？"></a>反射的实现方式？</h2><p>1.获取Class对象</p>
+<ul>
+<li><p>通过Class类的方法Class.forName(className)</p>
+</li>
+<li><p>通过类.class</p>
+</li>
+<li><p>通过对象this.getClass()。</p>
+</li>
+</ul>
+<p>2.调用对应的API生成 JVM 中的类、接口或则对象的信息。</p>
+<ul>
+<li><p>Class 类：反射的核心类，可以获取类的属性，方法等信息。</p>
+</li>
+<li><p>Field 类：Java.lang.reflec 包中的类，表示类的成员变量，可以</p>
+<p>用来获取和设置类之中的属性值。</p>
+</li>
+<li><p>Method 类：Java.lang.reflec 包中的类，表示类的方法，它可</p>
+<p>以用来获取类中的方法信息或者执行方法。</p>
+</li>
+<li><p>Constructor 类：Java.lang.reflec 包中的类，表示类的构造方法。</p>
+</li>
+</ul>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p><code>Annotation</code> （注解） 是 Java5 开始引入的新特性，可以看作是一种特殊的注释，主要用于修饰类、方法或者变量，提供某些信息供程序在编译或者运行时使用。</p>
+<h2 id="4种标准元注解是哪四种？"><a href="#4种标准元注解是哪四种？" class="headerlink" title="4种标准元注解是哪四种？"></a>4种标准元注解是哪四种？</h2><p>元注解是用来修饰注解的注解，JDK提供了四个元注解。</p>
+<p><strong>@Target 修饰的对象范围</strong></p>
+<ul>
+<li>类，变量，方法</li>
+</ul>
+<p><strong>@Retention注解被保留的时间长短</strong></p>
+<ul>
+<li>SOURCE:在源文件中有效（即源文件保留）</li>
+<li>CLASS:在 class 文件中有效（即 class 保留）</li>
+<li>RUNTIME:在运行时有效（即运行时保留）</li>
+</ul>
+<blockquote>
+<p>Retention 定义了该 Annotation 被保留的时间长短</p>
+<p>用于描述注解的生命周期取值（RetentionPoicy.）</p>
+</blockquote>
+<p><strong>@Documented 描述-javadoc</strong></p>
+<ul>
+<li>可以被例如 javadoc 此类的工具文档化。</li>
+</ul>
+<p><strong>@Inherited 阐述了某个被标注的类型是被继承的</strong></p>
+<ul>
+<li>该注解也作用于其子类，那么可以用@Inherited 来进行修饰</li>
+</ul>
+<h2 id="JDK内置三个基本注解？"><a href="#JDK内置三个基本注解？" class="headerlink" title="JDK内置三个基本注解？"></a>JDK内置三个基本注解？</h2><ul>
+<li>@Override：限定重写父类方法，该注解只能用于方法。</li>
+<li>@Deprecated：用于表述修饰的元素如：类、方法等已过时。</li>
+<li>@SuppressWarnings：抑制编译器警告。</li>
+</ul>
+<h2 id="注解的解析方法有哪几种？"><a href="#注解的解析方法有哪几种？" class="headerlink" title="注解的解析方法有哪几种？"></a>注解的解析方法有哪几种？</h2><p>注解只有被解析之后才会生效，常见的解析方法有两种：</p>
+<ul>
+<li><strong>编译期直接扫描</strong> ：编译器在编译 Java 代码的时候扫描对应的注解并处理，比如某个方法使用<code>@Override</code> 注解，编译器在编译的时候就会检测当前的方法是否重写了父类对应的方法。</li>
+<li><strong>运行期通过反射处理</strong> ：像框架中自带的注解(比如 Spring 框架的 <code>@Value</code> 、<code>@Component</code>)都是通过反射来进行处理</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://lw-maple.github.io">Lost丶逝水如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lw-maple.github.io/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%8F%8D%E5%B0%84%E4%B8%8E%E6%B3%A8%E8%A7%A3%E3%80%91/">https://lw-maple.github.io/2023/03/12/2023-3-12-【面试-反射与注解】/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lw-maple.github.io" target="_blank">漫漫长夜</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/coverImg/16.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8EIO%E3%80%91/"><img class="prev-cover" src="/img/coverImg/14.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">面试-序列化与IO</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%B3%9B%E5%9E%8B%E3%80%91/"><img class="next-cover" src="/img/coverImg/10.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">面试-异常与泛型</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%91%20/" title="面试-Java基础语法与基本数据类型"><img class="cover" src="/img/coverImg/12.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">面试-Java基础语法与基本数据类型</div></div></a></div><div><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%91/" title="面试-面向对象"><img class="cover" src="/img/coverImg/1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">面试-面向对象</div></div></a></div><div><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%B8%B8%E8%A7%81%E7%B1%BB%E3%80%91/" title="面试-常见类"><img class="cover" src="/img/coverImg/8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">面试-常见类</div></div></a></div><div><a href="/2023/03/06/2023-3-5-%E3%80%90%E9%9D%A2%E8%AF%95-Java%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E3%80%91/" title="面试-Java基础概念"><img class="cover" src="/img/coverImg/15.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-06</div><div class="title">面试-Java基础概念</div></div></a></div><div><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%B3%9B%E5%9E%8B%E3%80%91/" title="面试-异常与泛型"><img class="cover" src="/img/coverImg/10.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">面试-异常与泛型</div></div></a></div><div><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8EIO%E3%80%91/" title="面试-序列化与IO"><img class="cover" src="/img/coverImg/14.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">面试-序列化与IO</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">1.</span> <span class="toc-text">反射</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">反射的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">反射的优缺点？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">反射的应用场景？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">反射的工作原理？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E6%95%88%E7%8E%87%EF%BC%9F"><span class="toc-number">1.5.</span> <span class="toc-text">反射的效率？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.6.</span> <span class="toc-text">反射的实现方式？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E7%A7%8D%E6%A0%87%E5%87%86%E5%85%83%E6%B3%A8%E8%A7%A3%E6%98%AF%E5%93%AA%E5%9B%9B%E7%A7%8D%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">4种标准元注解是哪四种？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK%E5%86%85%E7%BD%AE%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%B3%A8%E8%A7%A3%EF%BC%9F"><span class="toc-number">2.2.</span> <span class="toc-text">JDK内置三个基本注解？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">注解的解析方法有哪几种？</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

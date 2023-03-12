@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>面试-常见类 | 漫漫长夜</title><meta name="keywords" content="Java"><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Object类Object 类是一个特殊的类，是所有类的父类 123456789101112131415161718192021222324252627282930313233343536373839404142434445&#x2F;** * native 方法，用于返回当前运行时对象的 Class 对象，使用了 final 关键字修饰，故不允许子类重写。 *&#x2F;public final native Cl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试-常见类">
+<meta property="og:url" content="https://lw-maple.github.io/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%B8%B8%E8%A7%81%E7%B1%BB%E3%80%91/index.html">
+<meta property="og:site_name" content="漫漫长夜">
+<meta property="og:description" content="Object类Object 类是一个特殊的类，是所有类的父类 123456789101112131415161718192021222324252627282930313233343536373839404142434445&#x2F;** * native 方法，用于返回当前运行时对象的 Class 对象，使用了 final 关键字修饰，故不允许子类重写。 *&#x2F;public final native Cl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/coverImg/8.jpg">
+<meta property="article:published_time" content="2023-03-11T08:49:44.000Z">
+<meta property="article:modified_time" content="2023-03-11T11:01:10.014Z">
+<meta property="article:author" content="Lost丶逝水如风">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/coverImg/8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%B8%B8%E8%A7%81%E7%B1%BB%E3%80%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试-常见类',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-11 19:01:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/atom-one-dark.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/coverImg/8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫漫长夜</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试-常见类</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-11T08:49:44.000Z" title="发表于 2023-03-11 16:49:44">2023-03-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-11T11:01:10.014Z" title="更新于 2023-03-11 19:01:10">2023-03-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试-常见类"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><p>Object 类是一个特殊的类，是所有类的父类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，用于返回当前运行时对象的 Class 对象，使用了 final 关键字修饰，故不允许子类重写。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> Class&lt;?&gt; getClass()<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，用于返回对象的哈希码，主要使用在哈希表中，比如 JDK 中的HashMap。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 用于比较 2 个对象的内存地址是否相等，String 类对该方法进行了重写以用于比较字符串的值是否相等。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object obj)</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * naitive 方法，用于创建并返回当前对象的一份拷贝。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">native</span> Object <span class="hljs-title function_">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 返回类的名字实例的哈希码的 16 进制的字符串。建议 Object 所有的子类都重写这个方法。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，并且不能重写。唤醒一个在此对象监视器上等待的线程(监视器相当于就是锁的概念)。如果有多个线程在等待只会任意唤醒一个。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notify</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，并且不能重写。跟 notify 一样，唯一的区别就是会唤醒在此对象监视器上等待的所有线程，而不是一个线程。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notifyAll</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native方法，并且不能重写。暂停线程的执行。注意：sleep 方法没有释放锁，而 wait 方法释放了锁 ，timeout 是等待时间。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wait</span><span class="hljs-params">(<span class="hljs-type">long</span> timeout)</span> <span class="hljs-keyword">throws</span> InterruptedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 多了 nanos 参数，这个参数表示额外时间（以毫微秒为单位，范围是 0-999999）。 所以超时的时间还需要加上 nanos 毫秒。。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wait</span><span class="hljs-params">(<span class="hljs-type">long</span> timeout, <span class="hljs-type">int</span> nanos)</span> <span class="hljs-keyword">throws</span> InterruptedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 跟之前的2个wait方法一样，只不过该方法一直等待，没有超时时间这个概念</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wait</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 实例被垃圾回收器回收的时候触发的操作</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">finalize</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Throwable &#123; &#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="x3D-x3D-和-equals-的区别"><a href="#x3D-x3D-和-equals-的区别" class="headerlink" title="&#x3D;&#x3D; 和 equals() 的区别"></a>&#x3D;&#x3D; 和 equals() 的区别</h2><p><strong><code>==</code></strong> 对于基本类型和引用类型的作用效果是不同的：</p>
+<ul>
+<li>对于基本数据类型来说，<code>==</code> 比较的是值。</li>
+<li>对于引用数据类型来说，<code>==</code> 比较的是对象的内存地址。</li>
+</ul>
+<p><code>equals()</code> 方法存在两种使用情况：</p>
+<ul>
+<li><strong>类没有重写 <code>equals()</code>方法</strong> ：通过<code>equals()</code>比较该类的两个对象时，等价于通过“&#x3D;&#x3D;”比较这两个对象，使用的默认是 <code>Object</code>类<code>equals()</code>方法。</li>
+<li><strong>类重写了 <code>equals()</code>方法</strong> ：一般我们都重写 <code>equals()</code>方法来比较两个对象中的属性是否相等；若它们的属性相等，则返回 true(即，认为这两个对象相等)。</li>
+</ul>
+<h2 id="hashCode-有什么用？"><a href="#hashCode-有什么用？" class="headerlink" title="hashCode() 有什么用？"></a>hashCode() 有什么用？</h2><ul>
+<li><p><code>hashCode()</code> 的作用是获取哈希码（<code>int</code> 整数），也称为散列码。这个<strong>哈希码的作用是确定该对象在哈希表中的索引位置</strong>。</p>
+</li>
+<li><p><code>hashCode()</code> 方法是本地方法，也就是用 C 语言或 C++ 实现的，该方法通常用来将对象的内存地址转换为整数之后返回。</p>
+</li>
+<li><p>如果两个对象的<code>hashCode</code> 值相等，那这两个对象不一定相等（哈希碰撞）。</p>
+<p>如果两个对象的<code>hashCode</code> 值相等并且<code>equals()</code>方法也返回 <code>true</code>，我们才认为这两个对象相等。</p>
+<p>如果两个对象的<code>hashCode</code> 值不相等，我们就可以直接认为这两个对象不相等。</p>
+</li>
+</ul>
+<blockquote>
+<p>哈希表，是根据关键码值(Key value)而直接进行访问的数据结构。它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。</p>
+<p>hashcode并不是内存地址，它是根据对象地址算出来的整数值</p>
+</blockquote>
+<h2 id="为什么重写-equals-时必须重写-hashCode-方法？"><a href="#为什么重写-equals-时必须重写-hashCode-方法？" class="headerlink" title="为什么重写 equals() 时必须重写 hashCode() 方法？"></a>为什么重写 equals() 时必须重写 hashCode() 方法？</h2><ul>
+<li><p>因为两个相等的对象的 <code>hashCode</code> 值必须是相等。也就是说如果 <code>equals</code> 方法判断两个对象是相等的，那这两个对象的 <code>hashCode</code> 值也要相等。</p>
+</li>
+<li><p>如果重写 <code>equals()</code> 时没有重写 <code>hashCode()</code> 方法的话就可能会导致 <code>equals</code> 方法判断是相等的两个对象，<code>hashCode</code> 值却不相等。在使用基于散列表的集合时会出问题</p>
+</li>
+</ul>
+<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><h2 id="类组成"><a href="#类组成" class="headerlink" title="类组成"></a>类组成</h2><ul>
+<li>这是一个用 final 声明的常量类，不能被任何类所继承</li>
+<li>接着实现了 Serializable接口，这是一个序列化标志接口，</li>
+<li>还实现了 Comparable 接口，用于比较两个字符串的大小（按顺序比较单个字符的ASCII码）</li>
+<li>最后实现了 CharSequence 接口，它代表了一个可读的字符序列。</li>
+</ul>
+<h2 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h2><p>1.value（char[]）：用于存储字符<br>2.hash（int）：用于缓存字符串的哈希码<br>3.serialVersionUID（long）：这是一个序列化和反序列化时的标记<br>4.serialPersistentFields（ObjectStreamField[]）：用于序列化的流操作</p>
+<p>在Java中，String是一个引用类型，它本身也是一个class。但是，Java编译器对String有特殊处理，即可以直接用”…”来表示一个字符串</p>
+<h2 id="String为什么不可变？"><a href="#String为什么不可变？" class="headerlink" title="String为什么不可变？"></a>String为什么不可变？</h2><p><code>tring</code> 真正不可变有下面几点原因：</p>
+<ol>
+<li>保存字符串的数组被 <code>final</code> 修饰且为私有的，并且<code>String</code> 类没有提供&#x2F;暴露修改这个字符串的方法。</li>
+<li><code>String</code> 类被 <code>final</code> 修饰导致其不能被继承，进而避免了子类破坏 <code>String</code> 不可变。</li>
+</ol>
+<h2 id="JDK9-为何将存储类型char改为byte？"><a href="#JDK9-为何将存储类型char改为byte？" class="headerlink" title="JDK9 为何将存储类型char改为byte？"></a>JDK9 为何将存储类型char改为byte？</h2><p>新版的 String 其实支持两个编码方案： Latin-1 和 UTF-16。如果字符串中包含的汉字没有超过 Latin-1 可表示范围内的字符，那就会使用 Latin-1 作为编码方案。Latin-1 编码方案下，<code>byte</code> 占一个字节(8 位)，<code>char</code> 占用 2 个字节（16），<code>byte</code> 相较 <code>char</code> 节省一半的内存空间。</p>
+<blockquote>
+<p>JDK 官方就说了绝大部分字符串对象只包含 Latin-1 可表示的字符。</p>
+<p>如果字符串中包含的汉字超过 Latin-1 可表示范围内的字符，<code>byte</code> 和 <code>char</code> 所占用的空间是一样的。</p>
+</blockquote>
+<h2 id="字符串拼接用“-”-还是-StringBuilder"><a href="#字符串拼接用“-”-还是-StringBuilder" class="headerlink" title="字符串拼接用“+” 还是 StringBuilder?"></a>字符串拼接用“+” 还是 StringBuilder?</h2><p>Java 语言本身并不支持运算符重载，“+”和“+&#x3D;”是专门为 String 类重载过的运算符，也是 Java 中仅有的两个重载过的运算符。</p>
+<p>字符串对象通过“+”的字符串拼接方式，实际上是通过 <code>StringBuilder</code> 调用 <code>append()</code> 方法实现的，拼接完成之后调用 <code>toString()</code> 得到一个 <code>String</code> 对象 。</p>
+<blockquote>
+<p>不过，在循环内使用“+”进行字符串的拼接的话，存在比较明显的缺陷：<strong>编译器不会创建单个 <code>StringBuilder</code> 以复用，会导致创建过多的 <code>StringBuilder</code> 对象</strong>。</p>
+</blockquote>
+<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2><p><strong>字符串常量池</strong> 是 JVM 为了提升性能和减少内存消耗针对字符串（String 类）专门开辟的一块区域，主要目的是为了避免字符串的重复创建。</p>
+<p> <strong>String s1 &#x3D; new String(“abc”);这句话创建了几个字符串对象？</strong></p>
+<blockquote>
+<p>1.如果字符串常量池中不存在字符串对象“abc”的引用，那么会在堆中创建 2 个字符串对象“abc”。</p>
+<p>2.如果字符串常量池中已存在字符串对象“abc”的引用，则只会在堆中创建 1 个字符串对象“abc”。</p>
+</blockquote>
+<h2 id="intern-方法有什么作用"><a href="#intern-方法有什么作用" class="headerlink" title="intern 方法有什么作用?"></a>intern 方法有什么作用?</h2><p><code>String.intern()</code> 是一个 native（本地）方法，其作用是<strong>将指定的字符串对象的引用保存在字符串常量池</strong>中，可以简单分为两种情况：</p>
+<ul>
+<li>如果字符串常量池中保存了对应的字符串对象的引用，就直接返回该引用。</li>
+<li>如果字符串常量池中没有保存了对应的字符串对象的引用，那就在常量池中创建一个指向该字符串对象的引用并返回。</li>
+</ul>
+<h2 id="String-类型的变量和常量做“-”运算时发生了什么？"><a href="#String-类型的变量和常量做“-”运算时发生了什么？" class="headerlink" title="String 类型的变量和常量做“+”运算时发生了什么？"></a>String 类型的变量和常量做“+”运算时发生了什么？</h2><ul>
+<li><p>对于编译期可以确定值的字符串，也就是常量字符串 ，jvm 会将其存入字符串常量池。</p>
+<p>并且，字符串常量拼接得到的字符串常量在编译阶段就已经被存放字符串常量池，这个得益于编译器的优化。</p>
+</li>
+<li><p><strong>引用的值在程序编译期是无法确定的，编译器无法对其进行优化。</strong></p>
+<p>对象引用和“+”的字符串拼接方式，实际上是通过 <code>StringBuilder</code> 调用 <code>append()</code> 方法实现的，拼接完成之后调用 <code>toString()</code> 得到一个 <code>String</code> 对象 。</p>
+</li>
+</ul>
+<blockquote>
+<p>不过，字符串使用 <code>final</code> 关键字声明之后，可以让编译器当做常量来处理。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span>;<br><span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;ing&quot;</span>;<br><span class="hljs-comment">// 下面两个表达式其实是等价的</span><br><span class="hljs-type">String</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span> + <span class="hljs-string">&quot;ing&quot;</span>;<span class="hljs-comment">// 常量池中的对象</span><br><span class="hljs-type">String</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> str1 + str2; <span class="hljs-comment">// 常量池中的对象</span><br>System.out.println(c == d);<span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://lw-maple.github.io">Lost丶逝水如风</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lw-maple.github.io/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%B8%B8%E8%A7%81%E7%B1%BB%E3%80%91/">https://lw-maple.github.io/2023/03/11/2023-3-11-【面试-常见类】/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lw-maple.github.io" target="_blank">漫漫长夜</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/coverImg/8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%91/"><img class="prev-cover" src="/img/coverImg/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">面试-面向对象</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%91%20/"><img class="next-cover" src="/img/coverImg/12.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">面试-Java基础语法与基本数据类型</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%91%20/" title="面试-Java基础语法与基本数据类型"><img class="cover" src="/img/coverImg/12.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">面试-Java基础语法与基本数据类型</div></div></a></div><div><a href="/2023/03/11/2023-3-11-%E3%80%90%E9%9D%A2%E8%AF%95-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%91/" title="面试-面向对象"><img class="cover" src="/img/coverImg/1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">面试-面向对象</div></div></a></div><div><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%8F%8D%E5%B0%84%E4%B8%8E%E6%B3%A8%E8%A7%A3%E3%80%91/" title="面试-反射与注解"><img class="cover" src="/img/coverImg/16.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">面试-反射与注解</div></div></a></div><div><a href="/2023/03/06/2023-3-5-%E3%80%90%E9%9D%A2%E8%AF%95-Java%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E3%80%91/" title="面试-Java基础概念"><img class="cover" src="/img/coverImg/15.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-06</div><div class="title">面试-Java基础概念</div></div></a></div><div><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%B3%9B%E5%9E%8B%E3%80%91/" title="面试-异常与泛型"><img class="cover" src="/img/coverImg/10.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">面试-异常与泛型</div></div></a></div><div><a href="/2023/03/12/2023-3-12-%E3%80%90%E9%9D%A2%E8%AF%95-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8EIO%E3%80%91/" title="面试-序列化与IO"><img class="cover" src="/img/coverImg/14.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">面试-序列化与IO</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Object%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-%E5%92%8C-equals-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text">&#x3D;&#x3D; 和 equals() 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hashCode-%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">hashCode() 有什么用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E5%86%99-equals-%E6%97%B6%E5%BF%85%E9%A1%BB%E9%87%8D%E5%86%99-hashCode-%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">为什么重写 equals() 时必须重写 hashCode() 方法？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E6%88%90"><span class="toc-number">2.1.</span> <span class="toc-text">类组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">成员变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8F%AF%E5%8F%98%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">String为什么不可变？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK9-%E4%B8%BA%E4%BD%95%E5%B0%86%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8Bchar%E6%94%B9%E4%B8%BAbyte%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">JDK9 为何将存储类型char改为byte？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%94%A8%E2%80%9C-%E2%80%9D-%E8%BF%98%E6%98%AF-StringBuilder"><span class="toc-number">2.5.</span> <span class="toc-text">字符串拼接用“+” 还是 StringBuilder?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-number">2.6.</span> <span class="toc-text">字符串常量池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intern-%E6%96%B9%E6%B3%95%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="toc-number">2.7.</span> <span class="toc-text">intern 方法有什么作用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%81%9A%E2%80%9C-%E2%80%9D%E8%BF%90%E7%AE%97%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.8.</span> <span class="toc-text">String 类型的变量和常量做“+”运算时发生了什么？</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
