@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>漫漫长夜 | 漫漫长夜</title><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ASCII码简单记忆一个简便的记忆法：0：48  A:65  a:97 Java创建对象的5种方式-   使用 new 关键字（最常用）： ObjectName obj &#x3D; new ObjectName(); 使用反射的Class类的newInstance()方法： ObjectName obj &#x3D; ObjectName.class.newInstance();  **使用反射">
+<meta property="og:type" content="website">
+<meta property="og:title" content="漫漫长夜">
+<meta property="og:url" content="https://lw-maple.github.io/temp/%E7%89%9B%E5%AE%A2%E7%AC%94%E8%AE%B0.html">
+<meta property="og:site_name" content="漫漫长夜">
+<meta property="og:description" content="ASCII码简单记忆一个简便的记忆法：0：48  A:65  a:97 Java创建对象的5种方式-   使用 new 关键字（最常用）： ObjectName obj &#x3D; new ObjectName(); 使用反射的Class类的newInstance()方法： ObjectName obj &#x3D; ObjectName.class.newInstance();  **使用反射">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/coverImg/22.jpg">
+<meta property="article:published_time" content="2023-02-15T03:54:31.287Z">
+<meta property="article:modified_time" content="2022-12-29T07:58:02.887Z">
+<meta property="article:author" content="Lost丶逝水如风">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/coverImg/22.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/temp/%E7%89%9B%E5%AE%A2%E7%AC%94%E8%AE%B0"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '漫漫长夜',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-12-29 15:58:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/atom-one-dark.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/banners/5.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫漫长夜</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">漫漫长夜</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="ASCII码简单记忆"><a href="#ASCII码简单记忆" class="headerlink" title="ASCII码简单记忆"></a>ASCII码简单记忆</h1><p>一个简便的记忆法：0：48  A:65  a:97</p>
+<h1 id="Java创建对象的5种方式"><a href="#Java创建对象的5种方式" class="headerlink" title="Java创建对象的5种方式"></a>Java创建对象的5种方式</h1><p>- </p>
+<ol>
+<li><strong>使用 new 关键字</strong>（最常用）： ObjectName obj &#x3D; new ObjectName();</li>
+<li><strong>使用反射的Class类的newInstance()方法</strong>： ObjectName obj &#x3D; ObjectName.class.newInstance(); </li>
+<li>**使用反射的Constructor类的newInstance()**方法： ObjectName obj &#x3D; ObjectName.class.getConstructor.newInstance();</li>
+<li><strong>使用对象克隆clone()方法</strong>： ObjectName obj &#x3D; obj.clone(); </li>
+<li>**使用反序列化（ObjectInputStream）的readObject()**方法：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> (<span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">ois</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(FILE_NAME))) &#123;<br>		<span class="hljs-type">ObjectName</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> ois.readObject();<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="基本类型知识点"><a href="#基本类型知识点" class="headerlink" title="基本类型知识点"></a>基本类型知识点</h1><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/profile/928490490/test/62903740/579638#summary">题目</a></p>
+<ul>
+<li><p>java中只有byte, boolean是一个字节,  </p>
+</li>
+<li><p>char是两个字节, 所以对于java来说127不会发生溢出, 输出328</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/profile/928490490/test/62903740/304924#summary">题目</a></p>
+<ul>
+<li>byte类型的变量在<strong>做运算时被会转换为int类型的值</strong>，故A、B左为byte，右为int，会报错；</li>
+<li>而C、D语句中用的是a+&#x3D;b的语句，<strong>此语句会将被赋值的变量自动强制转化为相对应的类型</strong>。</li>
+</ul>
+<h1 id="try-catch与finally"><a href="#try-catch与finally" class="headerlink" title="try,catch与finally"></a>try,catch与finally</h1><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/profile/928490490/test/62903740/99032#summary">题目</a></p>
+<p>1、不管有木有出现异常，finally块中代码都会执行；<br>2、当try和catch中有return时，finally仍然会执行；<br>3、finally是在return后面的表达式运算后执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，管finally中的代码怎么样，返回的值都不会改变，任然是之前保存的值），所以函数返回值是在finally执行前确定的；<br>4、finally中最好不要包含return，否则程序会提前退出，返回值不是try或catch中保存的返回值。</p>
+<h1 id="集合体系"><a href="#集合体系" class="headerlink" title="集合体系"></a>集合体系</h1><p><img src="https://uploadfiles.nowcoder.com/images/20170608/7010483_1496884090913_9553A95A1845661EB80E51191737B9FF"></p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20170214/2193220_1487038875892_072774B6B658B3603E1AA7198722775C" alt="img"></p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>mape.size() 方法用于返回在此映射中的键 - 值映射关系的数量。</p>
+<h1 id="Java构造方法"><a href="#Java构造方法" class="headerlink" title="Java构造方法"></a>Java构造方法</h1><ul>
+<li>构造方法可以被重载，一个构造方法可以通过this关键字调用另一个构造方法，this语句必须位于构造方法的第一行；</li>
+<li>当一个类中没有定义任何构造方法，Java将自动提供一个缺省构造方法</li>
+<li>子类通过super关键字调用父类的一个构造方法；</li>
+<li>子类构造方法在调用时必须先调用父类的，由于父类没有无参构造，必须在子类中显式调用.</li>
+<li>当子类的某个构造方法没有通过super关键字调用父类的构造方法，通过这个构造方法创建子类对象时，会自动先调用父类的缺省构造方法</li>
+<li>构造方法不能被static、final、synchronized、abstract、native修饰，但可以被public、private、protected修饰；</li>
+<li>构造方法不能被子类继承，所以用final修饰没有意义。</li>
+<li>构造方法用于创建一个新的对象，不能作为类的静态方法，所以用static修饰没有意义。</li>
+<li>此外，Java语言不支持native或synchronized的构造方法。</li>
+<li>构造方法不是类的成员方法<ul>
+<li>构造器不属于成员方法，成员方法是可以通过”对象名．方法名”访问的</li>
+</ul>
+</li>
+<li>构造方法不能被继承。</li>
+</ul>
+<h2 id="hashtable和hashmap"><a href="#hashtable和hashmap" class="headerlink" title="hashtable和hashmap"></a>hashtable和hashmap</h2><p><strong>Hashtable</strong>：</p>
+<p>  （1）Hashtable 是一个散列表，它存储的内容是键值对(key-value)映射。 </p>
+<p>  （2）Hashtable 的函数都是同步的，这意味着它是<strong>线程安全</strong>的。它的key、value都不可以为null。 </p>
+<p>  （3）HashTable直接使用对象的hashCode。</p>
+<p>  <strong>HashMap：</strong>  </p>
+<p>  （1）由<strong>数组+链表</strong>组成的，基于<strong>哈希表的Map</strong>实现，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的。 </p>
+<p>  （2）不是线程安全的，HashMap可以接受为null的键(key)和值(value)。</p>
+<p>  （3）HashMap重新计算hash值</p>
+<h1 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h1><ul>
+<li>子类重写父类方法时，方法的访问权限不能小于原访问权限，在接口中，方法的默认权限就是public，所以子类重写后只能是public</li>
+</ul>
+<h1 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h1><p><img src="http://uploadfiles.nowcoder.com/images/20151113/140047_1447376765880_373DC390B08E99ABC340DB1F78F35FCB" alt="img"></p>
+<ul>
+<li>**Exception（异常） :**是程序本身可以处理的异常。</li>
+<li><strong>Error（错误）:</strong> 是程序无法处理的错误。这些错误表示故障发生于虚拟机自身、或者发生在虚拟机试图执行应用时，一般不需要程序处理。</li>
+<li><strong>检查异常（编译器要求必须处置的异常）</strong> ： 除了Error，RuntimeException及其子类以外，其他的Exception类及其子类都属于可查异常。这种异常的特点是Java编译器会检查它，也就是说，当程序中可能出现这类异常，要么用try-catch语句捕获它，要么用throws子句声明抛出它，否则编译不会通过。</li>
+<li><strong>非检查异常(编译器不要求处置的异常):</strong> 包括运行时异常（RuntimeException与其子类）和错误（Error）。</li>
+</ul>
+<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><ul>
+<li>JVM在判定两个class是否相同时，不仅要判断两个类名是否相同，而且要判断是否由同一个类加载器实例加载的。</li>
+</ul>
+<h1 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h1><ul>
+<li><p><strong>抽象类</strong></p>
+<ul>
+<li><p>含有abstract修饰符的class即为抽象类，abstract类不能创建实例对象。</p>
+<ul>
+<li>构造方法是没有返回值的方法，在new实例化对象时被调用。所以抽象类可以有构造方法。<ul>
+<li>抽象类确实有构造方法，但这个构造方法是用来被子类调用的，因为任何子类都必须调用从Object开始的所有父亲的构造方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>含有abstract方法的类必须定义为abstract class，abstract class类中的方法不必是抽象的。</p>
+</li>
+<li><p>abstract class类中定义抽象方法必须在具体(Concrete)子类中实现，所以，不能有抽象构造方法或抽象静态方法。如果的子类没有实现抽象父类中的所有抽象方法，那么子类也必须定义为abstract类型。 </p>
+</li>
+<li><p><strong>接口</strong></p>
+</li>
+</ul>
+</li>
+<li><p>可以说成是抽象类的一种特例</p>
+<ul>
+<li>接口中的所有方法都必须是抽象的。<br>- 接口中的方法定义默认为public abstract类型。<br>  - 在jdk1.8中提供了默认方法和静态方法，<strong>接口中可以实现具体的方法体，只需要加上关键字static或者default修饰即可。</strong><br>- 接口中的成员变量类型默认为public static final。</li>
+</ul>
+</li>
+<li><p><strong>区别</strong></p>
+</li>
+<li><p>抽象类可以有构造方法，接口中不能有构造方法。 </p>
+<ul>
+<li>抽象类中可以有普通成员变量，接口中没有普通成员变量 </li>
+<li>抽象类中可以包含非抽象的普通方法，接口中的所有方法必须都是抽象的，不能有非抽象的普通方法。 </li>
+<li>抽象类中的抽象方法的访问类型可以是public，protected和（默认类型,虽然 eclipse下不报错，但应该也不行），但接口中的抽象方法只能是public类型的，并且默认即为public abstract类型。 </li>
+<li>抽象类中可以包含静态方法，接口中不能包含静态方法 </li>
+<li>抽象类和接口中都可以包含静态成员变量，抽象类中的静态成员变量的访问类型可以任意，但接口中定义的变量只能是public static final类型，并且默认即为public static final类型。 </li>
+<li>一个类可以实现多个接口，但只能继承一个抽象类。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>接口更多的是在系统架构设计方法发挥作用，主要用于定义模块之间的通信契约。</p>
+<p>而抽象类在代码实现方面发挥作用，可以实现代码的重用</p>
+</blockquote>
+<h1 id="类的权限控制"><a href="#类的权限控制" class="headerlink" title="类的权限控制"></a>类的权限控制</h1><table>
+<thead>
+<tr>
+<th></th>
+<th>private</th>
+<th>default</th>
+<th>protected</th>
+<th>public</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一个类中</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>同一个包中</td>
+<td></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>子类中</td>
+<td></td>
+<td></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>全局范围内</td>
+<td></td>
+<td></td>
+<td></td>
+<td>√</td>
+</tr>
+</tbody></table>
+<ul>
+<li>对于外部类而言，它也可以使用访问控制符修饰，但外部类只能有两种访问控制级别： public 和默认。因为外部类没有处于任何类的内部，也就没有其所在类的内部、所在类的子类两个范围，因此 private 和 protected 访问控制符对外部类没有意义。</li>
+<li>内部类的上一级程序单元是外部类，它具有 4 个作用域：同一个类（ private ）、同一个包（ protected ）和任何位置（ public ）。</li>
+<li>因为局部成员的作用域是所在方法，其他程序单元永远不可能访问另一个方法中的局部变量，所以所有的局部成员都不能使用访问控制修饰符修饰。</li>
+</ul>
+<h1 id="java异常"><a href="#java异常" class="headerlink" title="java异常"></a>java异常</h1><p><img src="https://uploadfiles.nowcoder.com/images/20211028/348470426_1635431780619/6479D7BB01736CCC61B8270D41F00B17" alt="img"></p>
+<h1 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h1><ol>
+<li>标识符的组成元素是字母（a-z，A-Z），数字（0~9），下划线（_）和美元符号（$）。</li>
+<li>标识符不能以数字开头。</li>
+<li>java的标识符是严格区分大小写的。</li>
+<li>标识符的长度可以是任意的。</li>
+<li>关键字以及null、true、false不能用于自定义的标识符。</li>
+</ol>
+<h1 id="staic"><a href="#staic" class="headerlink" title="staic"></a>staic</h1><p>子类重写父类的静态方法，被子类调用时，子类方法并不会生效，而是调用了父类的静态方法。static关键字至关重要，经常在选项中出现，只要记住static属于类，<strong>在编译阶段就已经确定函数名和地址，并已经分配了内存，所以不存在运行时期多态的判断，他只是一个静态绑定，所以无法重写。</strong></p>
+<h1 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h1><ul>
+<li><p>java的switch比较特殊，低于int的类型，使用会上转为int类型作为判断，所以大于int的类型，如long,double就不可以在switch中使用（不能自动向下转型），至于枚举类，实际比较的也是和int相关的类型（枚举的记不住了），String是和hashcode有关，int类型。 总结，switch只接受int类型的数据，接受了低类型的就自动向上转为int</p>
+</li>
+<li><p>1.5后支持String和enum</p>
+</li>
+</ul>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><h2 id="Interger"><a href="#Interger" class="headerlink" title="Interger"></a>Interger</h2><ul>
+<li>对于-128到127之间的数, Integer直接从数组中取, 故a1, a2指向的是同一个对象, A正确. </li>
+<li>其余都是new出来的对象, 显然地址都不相同. </li>
+<li>int类型与Integer类型比较时, 先将Integer拆箱, 再比较值</li>
+</ul>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lost丶逝水如风</div><div class="author-info__description">If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LW-Maple" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maplewcw@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">😅由于国内政策原因，博客从Gitee迁移至Github</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/12/2023-3-12-%E3%80%90Blog%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93%E3%80%91/" title="博客项目总结"><img src="/img/coverImg/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客项目总结"/></a><div class="content"><a class="title" href="/2023/03/12/2023-3-12-%E3%80%90Blog%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93%E3%80%91/" title="博客项目总结">博客项目总结</a><time datetime="2023-03-12T02:11:44.000Z" title="发表于 2023-03-12 10:11:44">2023-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/19/2022-11-20-%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91/" title="操作系统"><img src="/img/coverImg/0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2022/11/19/2022-11-20-%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91/" title="操作系统">操作系统</a><time datetime="2022-11-19T07:41:28.000Z" title="发表于 2022-11-19 15:41:28">2022-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/19/2022-10-19-%E3%80%90Nginx%E3%80%91/" title="Nginx"><img src="/img/coverImg/15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nginx"/></a><div class="content"><a class="title" href="/2022/10/19/2022-10-19-%E3%80%90Nginx%E3%80%91/" title="Nginx">Nginx</a><time datetime="2022-10-19T07:41:28.000Z" title="发表于 2022-10-19 15:41:28">2022-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/16/2022-10-16-%E3%80%90%E5%89%91%E6%8C%87Offer(%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84)%E3%80%91/" title="剑指Offer【二叉树中和为某一值的路径】"><img src="/img/coverImg/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指Offer【二叉树中和为某一值的路径】"/></a><div class="content"><a class="title" href="/2022/10/16/2022-10-16-%E3%80%90%E5%89%91%E6%8C%87Offer(%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84)%E3%80%91/" title="剑指Offer【二叉树中和为某一值的路径】">剑指Offer【二叉树中和为某一值的路径】</a><time datetime="2022-10-16T00:55:56.000Z" title="发表于 2022-10-16 08:55:56">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/2022-10-14-%E3%80%90%E5%89%91%E6%8C%87Offer(%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0)%E3%80%91/" title="剑指Offer【数组中数字出现的次数】"><img src="/img/coverImg/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指Offer【数组中数字出现的次数】"/></a><div class="content"><a class="title" href="/2022/10/14/2022-10-14-%E3%80%90%E5%89%91%E6%8C%87Offer(%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0)%E3%80%91/" title="剑指Offer【数组中数字出现的次数】">剑指Offer【数组中数字出现的次数】</a><time datetime="2022-10-14T07:02:56.000Z" title="发表于 2022-10-14 15:02:56">2022-10-14</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CS/"><span class="card-category-list-name">CS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaEE/"><span class="card-category-list-name">JavaEE</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaSE%E9%AB%98%E7%BA%A7/"><span class="card-category-list-name">JavaSE高级</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Leetcode/"><span class="card-category-list-name">Leetcode</span><span class="card-category-list-count">78</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Nginx/"><span class="card-category-list-name">Nginx</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"><span class="card-category-list-name">分布式</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%80%BB%E7%BB%93/"><span class="card-category-list-name">总结</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">3</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%F0%9F%94%A5-LeetCode-%E7%83%AD%E9%A2%98-HOT-100/" style="font-size: 1.45em; color: rgb(141, 95, 99)">🔥 LeetCode 热题 HOT 100</a><a href="/tags/%E5%89%91%E6%8C%87Offer/" style="font-size: 1.35em; color: rgb(142, 184, 153)">剑指Offer</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(35, 45, 20)">Git</a><a href="/tags/ZooKeeper/" style="font-size: 1.15em; color: rgb(58, 62, 14)">ZooKeeper</a><a href="/tags/Dubbo/" style="font-size: 1.15em; color: rgb(104, 124, 35)">Dubbo</a><a href="/tags/Nginx/" style="font-size: 1.15em; color: rgb(52, 172, 48)">Nginx</a><a href="/tags/SSM/" style="font-size: 1.15em; color: rgb(11, 110, 34)">SSM</a><a href="/tags/SpringBoot/" style="font-size: 1.25em; color: rgb(92, 28, 137)">SpringBoot</a><a href="/tags/RabbitMQ/" style="font-size: 1.15em; color: rgb(22, 77, 110)">RabbitMQ</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(77, 56, 19)">操作系统</a><a href="/tags/Spring/" style="font-size: 1.15em; color: rgb(25, 153, 48)">Spring</a><a href="/tags/MySQL/" style="font-size: 1.25em; color: rgb(179, 75, 52)">MySQL</a><a href="/tags/SpringSecurity/" style="font-size: 1.15em; color: rgb(123, 152, 21)">SpringSecurity</a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.15em; color: rgb(143, 15, 138)">项目</a><a href="/tags/JavaWeb/" style="font-size: 1.15em; color: rgb(30, 13, 112)">JavaWeb</a><a href="/tags/SpringMVC/" style="font-size: 1.15em; color: rgb(11, 19, 166)">SpringMVC</a><a href="/tags/MyBatis/" style="font-size: 1.15em; color: rgb(196, 147, 46)">MyBatis</a><a href="/tags/Redis/" style="font-size: 1.15em; color: rgb(173, 184, 132)">Redis</a><a href="/tags/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(8, 187, 123)">23种设计模式</a><a href="/tags/JUC/" style="font-size: 1.15em; color: rgb(24, 173, 83)">JUC</a><a href="/tags/JVM/" style="font-size: 1.15em; color: rgb(82, 162, 30)">JVM</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">20</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">13</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">107</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-03-20T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">247.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-09T10:31:39.881Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

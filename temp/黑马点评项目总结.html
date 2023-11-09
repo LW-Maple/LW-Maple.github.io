@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>漫漫长夜 | 漫漫长夜</title><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="RedisTemplete的API使用缓存更新策略 缓存穿透 缓存雪崩 缓存击穿  全局唯一id生成雪花算法 悲观锁解决超卖问题 锁的粒度 事务与锁的前后问题 事务,代理类,与被代理类,事务失效问题  分布式锁set nx ex 同时设置  删锁前判断是否是自己的锁 判断锁与删除锁的原子操作,通过lua脚本实现  123456789101112131415161718192021222324252">
+<meta property="og:type" content="website">
+<meta property="og:title" content="漫漫长夜">
+<meta property="og:url" content="https://lw-maple.github.io/temp/%E9%BB%91%E9%A9%AC%E7%82%B9%E8%AF%84%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93.html">
+<meta property="og:site_name" content="漫漫长夜">
+<meta property="og:description" content="RedisTemplete的API使用缓存更新策略 缓存穿透 缓存雪崩 缓存击穿  全局唯一id生成雪花算法 悲观锁解决超卖问题 锁的粒度 事务与锁的前后问题 事务,代理类,与被代理类,事务失效问题  分布式锁set nx ex 同时设置  删锁前判断是否是自己的锁 判断锁与删除锁的原子操作,通过lua脚本实现  123456789101112131415161718192021222324252">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/coverImg/21.jpg">
+<meta property="article:published_time" content="2023-04-21T08:47:55.756Z">
+<meta property="article:modified_time" content="2023-04-21T08:47:55.756Z">
+<meta property="article:author" content="Lost丶逝水如风">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/coverImg/21.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/temp/%E9%BB%91%E9%A9%AC%E7%82%B9%E8%AF%84%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '漫漫长夜',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-04-21 16:47:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/atom-one-dark.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/banners/5.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫漫长夜</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">漫漫长夜</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="RedisTemplete的API使用"><a href="#RedisTemplete的API使用" class="headerlink" title="RedisTemplete的API使用"></a>RedisTemplete的API使用</h1><h1 id="缓存更新策略"><a href="#缓存更新策略" class="headerlink" title="缓存更新策略"></a>缓存更新策略</h1><p><img src="C:\Users\Maple\AppData\Roaming\Typora\typora-user-images\image-20230322164010922.png" alt="image-20230322164010922"></p>
+<h1 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h1><p><img src="C:\Users\Maple\AppData\Roaming\Typora\typora-user-images\image-20230324175016614.png" alt="image-20230324175016614"></p>
+<h1 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h1><p><img src="C:\Users\Maple\AppData\Roaming\Typora\typora-user-images\image-20230325100259144.png" alt="image-20230325100259144"></p>
+<h1 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h1><p><img src="C:\Users\Maple\AppData\Roaming\Typora\typora-user-images\image-20230325101533109.png" alt="image-20230325101533109"></p>
+<p><img src="C:\Users\Maple\AppData\Roaming\Typora\typora-user-images\image-20230325101601934.png" alt="image-20230325101601934"></p>
+<h1 id="全局唯一id生成"><a href="#全局唯一id生成" class="headerlink" title="全局唯一id生成"></a>全局唯一id生成</h1><p>雪花算法</p>
+<h1 id="悲观锁解决超卖问题"><a href="#悲观锁解决超卖问题" class="headerlink" title="悲观锁解决超卖问题"></a>悲观锁解决超卖问题</h1><ul>
+<li>锁的粒度</li>
+<li>事务与锁的前后问题</li>
+<li>事务,代理类,与被代理类,事务失效问题</li>
+</ul>
+<h1 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h1><p>set nx ex 同时设置</p>
+<ul>
+<li>删锁前判断是否是自己的锁</li>
+<li>判断锁与删除锁的原子操作,通过lua脚本实现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span> Maple</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span> 2023/4/12 15:57</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Version</span> 1.0</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SimpleLock</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ILock</span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> StringRedisTemplate redisTemplate;<br><br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String KEY_PREFIX=<span class="hljs-string">&quot;lock:&quot;</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String ID_PREFIX= UUID.randomUUID().toString(<span class="hljs-literal">true</span>)+<span class="hljs-string">&quot;-&quot;</span>;<br><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SimpleLock</span><span class="hljs-params">(String name)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">tryLock</span><span class="hljs-params">(<span class="hljs-type">long</span> timeout)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> ID_PREFIX+Thread.currentThread().getId();<br>        <span class="hljs-type">Boolean</span> <span class="hljs-variable">success</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue().setIfAbsent(KEY_PREFIX + name, id, timeout, TimeUnit.SECONDS);<br>        <span class="hljs-keyword">return</span> Boolean.TRUE.equals(success);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">unlock</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">threadId</span> <span class="hljs-operator">=</span> ID_PREFIX + Thread.currentThread().getId();<br><br>        <span class="hljs-type">String</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue().get(KEY_PREFIX + name);<br>        <br>        <span class="hljs-keyword">if</span> (threadId.equals(id))&#123;<br>            redisTemplate.delete(KEY_PREFIX+name);<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>redisson</li>
+</ul>
+<h1 id="set-zset的使用"><a href="#set-zset的使用" class="headerlink" title="set,zset的使用"></a>set,zset的使用</h1><p>点赞,取消点赞 ,查询点赞,点赞排行榜</p>
+<p>使用zset实现(通过时间戳排序排序)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">    * 点赞,取消点赞的实现</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> id</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">    */</span><br>   <span class="hljs-meta">@Override</span><br>   <span class="hljs-keyword">public</span> Result <span class="hljs-title function_">likeBlog</span><span class="hljs-params">(Long id)</span> &#123;<br>       <span class="hljs-comment">//getUser</span><br>       <span class="hljs-type">Long</span> <span class="hljs-variable">userId</span> <span class="hljs-operator">=</span> UserHolder.getUser().getId();<br>       String key=<span class="hljs-string">&quot;blog:liked&quot;</span>+id;<br>       <span class="hljs-type">Double</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> redisTemplate.opsForZSet().score(key, userId);<br>       <span class="hljs-keyword">if</span> (score==<span class="hljs-literal">null</span>)&#123;<br>           <span class="hljs-type">boolean</span> <span class="hljs-variable">isSuccess</span> <span class="hljs-operator">=</span> update().setSql(<span class="hljs-string">&quot;liked=liked+1&quot;</span>).eq(<span class="hljs-string">&quot;id&quot;</span>, id).update();<br>           <span class="hljs-keyword">if</span> (isSuccess)&#123;<br>               redisTemplate.opsForZSet().add(key, userId.toString(),System.currentTimeMillis());<br>           &#125;<br>       &#125;<span class="hljs-keyword">else</span>&#123;<br>           <span class="hljs-type">boolean</span> <span class="hljs-variable">isSuccess</span> <span class="hljs-operator">=</span> update().setSql(<span class="hljs-string">&quot;liked=liked-1&quot;</span>).eq(<span class="hljs-string">&quot;id&quot;</span>, id).update();<br>           <span class="hljs-keyword">if</span> (isSuccess)&#123;<br>               redisTemplate.opsForZSet().remove(key, userId.toString());<br>           &#125;<br>       &#125;<br>       <span class="hljs-keyword">return</span> Result.ok();<br><br>   &#125;<br><br>   <span class="hljs-comment">/**</span><br><span class="hljs-comment">    * 查询top5点赞用户</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> id</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">    */</span><br>   <span class="hljs-meta">@Override</span><br>   <span class="hljs-keyword">public</span> Result <span class="hljs-title function_">queryBlogLikesUserTop5</span><span class="hljs-params">(Long id)</span> &#123;<br>       String key=<span class="hljs-string">&quot;blog:liked&quot;</span>+id;<br>       Set&lt;String&gt; top5Users = redisTemplate.opsForZSet().range(key, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>);<br>       <span class="hljs-keyword">if</span> (top5Users==<span class="hljs-literal">null</span>||top5Users.isEmpty())&#123;<br>           <span class="hljs-keyword">return</span> Result.ok(Collections.emptyList());<br>       &#125;<br>       List&lt;Long&gt; ids = top5Users.stream().map(Long::valueOf).collect(Collectors.toList());<br>       List&lt;UserDTO&gt; userDTOList = userService.listByIds(ids).stream()<br>               .map(user -&gt; &#123;<br>                   <span class="hljs-type">UserDTO</span> <span class="hljs-variable">userDTO</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserDTO</span>();<br>                   BeanUtils.copyProperties(user, userDTO);<br>                   <span class="hljs-keyword">return</span> userDTO;<br>               &#125;)<br>               .collect(Collectors.toList());<br>       <span class="hljs-keyword">return</span> Result.ok(userDTOList);<br>   &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>数据操作可以设置为定时任务写入数据库</p>
+</blockquote>
+<p>bitmap 用户签到统计</p>
+<p>hyperloglog:UV	统计</p>
+<p>最重要的是简历写法要改变一下，不要就说几个字，做了搜索，做了点赞防抖。而是展开把你真正做的事情和亮点写出来，比如说因为遇到用需要用到贴子的全局搜索，考虑到数据库的性能压力，利用什么什么手段进行读写库的分离，保证主库和从库数据的一致，并在以读为主的从库上，使用什么什么进行了全局搜索功能，不影响主库的正常业务进行。并且使搜索效率比之前的数据库查询，提高了多少多少多少。<br>这样写，一方面你的简历描述就跟其他的社区项目不一样，重复度就解决了。另一方面，面试的时候，面试官是根据你的项目描述提问，那他自然会根据你的描述，去问你怎么做到的主从分离？主从的数据怎么保持的一致性？你的这个数据提高结果是怎么来的？<br>你会发现，大部分公司的面试官都会问这些问题，因为这是你的简历描述在引导他的提问。而这些问题的答案，你之前都已经准备好了，那最后面试的成绩自然就会很高。</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lost丶逝水如风</div><div class="author-info__description">If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LW-Maple" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maplewcw@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">😅由于国内政策原因，博客从Gitee迁移至Github</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/12/2023-3-12-%E3%80%90Blog%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93%E3%80%91/" title="博客项目总结"><img src="/img/coverImg/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客项目总结"/></a><div class="content"><a class="title" href="/2023/03/12/2023-3-12-%E3%80%90Blog%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93%E3%80%91/" title="博客项目总结">博客项目总结</a><time datetime="2023-03-12T02:11:44.000Z" title="发表于 2023-03-12 10:11:44">2023-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/19/2022-11-20-%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91/" title="操作系统"><img src="/img/coverImg/0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2022/11/19/2022-11-20-%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91/" title="操作系统">操作系统</a><time datetime="2022-11-19T07:41:28.000Z" title="发表于 2022-11-19 15:41:28">2022-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/19/2022-10-19-%E3%80%90Nginx%E3%80%91/" title="Nginx"><img src="/img/coverImg/15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nginx"/></a><div class="content"><a class="title" href="/2022/10/19/2022-10-19-%E3%80%90Nginx%E3%80%91/" title="Nginx">Nginx</a><time datetime="2022-10-19T07:41:28.000Z" title="发表于 2022-10-19 15:41:28">2022-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/16/2022-10-16-%E3%80%90%E5%89%91%E6%8C%87Offer(%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84)%E3%80%91/" title="剑指Offer【二叉树中和为某一值的路径】"><img src="/img/coverImg/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指Offer【二叉树中和为某一值的路径】"/></a><div class="content"><a class="title" href="/2022/10/16/2022-10-16-%E3%80%90%E5%89%91%E6%8C%87Offer(%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84)%E3%80%91/" title="剑指Offer【二叉树中和为某一值的路径】">剑指Offer【二叉树中和为某一值的路径】</a><time datetime="2022-10-16T00:55:56.000Z" title="发表于 2022-10-16 08:55:56">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/2022-10-14-%E3%80%90%E5%89%91%E6%8C%87Offer(%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0)%E3%80%91/" title="剑指Offer【数组中数字出现的次数】"><img src="/img/coverImg/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指Offer【数组中数字出现的次数】"/></a><div class="content"><a class="title" href="/2022/10/14/2022-10-14-%E3%80%90%E5%89%91%E6%8C%87Offer(%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0)%E3%80%91/" title="剑指Offer【数组中数字出现的次数】">剑指Offer【数组中数字出现的次数】</a><time datetime="2022-10-14T07:02:56.000Z" title="发表于 2022-10-14 15:02:56">2022-10-14</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CS/"><span class="card-category-list-name">CS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaEE/"><span class="card-category-list-name">JavaEE</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaSE%E9%AB%98%E7%BA%A7/"><span class="card-category-list-name">JavaSE高级</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Leetcode/"><span class="card-category-list-name">Leetcode</span><span class="card-category-list-count">78</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Nginx/"><span class="card-category-list-name">Nginx</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"><span class="card-category-list-name">分布式</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%80%BB%E7%BB%93/"><span class="card-category-list-name">总结</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">3</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%F0%9F%94%A5-LeetCode-%E7%83%AD%E9%A2%98-HOT-100/" style="font-size: 1.45em; color: rgb(141, 95, 99)">🔥 LeetCode 热题 HOT 100</a><a href="/tags/%E5%89%91%E6%8C%87Offer/" style="font-size: 1.35em; color: rgb(142, 184, 153)">剑指Offer</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(35, 45, 20)">Git</a><a href="/tags/ZooKeeper/" style="font-size: 1.15em; color: rgb(58, 62, 14)">ZooKeeper</a><a href="/tags/Dubbo/" style="font-size: 1.15em; color: rgb(104, 124, 35)">Dubbo</a><a href="/tags/Nginx/" style="font-size: 1.15em; color: rgb(52, 172, 48)">Nginx</a><a href="/tags/SSM/" style="font-size: 1.15em; color: rgb(11, 110, 34)">SSM</a><a href="/tags/SpringBoot/" style="font-size: 1.25em; color: rgb(92, 28, 137)">SpringBoot</a><a href="/tags/RabbitMQ/" style="font-size: 1.15em; color: rgb(22, 77, 110)">RabbitMQ</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(77, 56, 19)">操作系统</a><a href="/tags/Spring/" style="font-size: 1.15em; color: rgb(25, 153, 48)">Spring</a><a href="/tags/MySQL/" style="font-size: 1.25em; color: rgb(179, 75, 52)">MySQL</a><a href="/tags/SpringSecurity/" style="font-size: 1.15em; color: rgb(123, 152, 21)">SpringSecurity</a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.15em; color: rgb(143, 15, 138)">项目</a><a href="/tags/JavaWeb/" style="font-size: 1.15em; color: rgb(30, 13, 112)">JavaWeb</a><a href="/tags/SpringMVC/" style="font-size: 1.15em; color: rgb(11, 19, 166)">SpringMVC</a><a href="/tags/MyBatis/" style="font-size: 1.15em; color: rgb(196, 147, 46)">MyBatis</a><a href="/tags/Redis/" style="font-size: 1.15em; color: rgb(173, 184, 132)">Redis</a><a href="/tags/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(8, 187, 123)">23种设计模式</a><a href="/tags/JUC/" style="font-size: 1.15em; color: rgb(24, 173, 83)">JUC</a><a href="/tags/JVM/" style="font-size: 1.15em; color: rgb(82, 162, 30)">JVM</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">20</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">13</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">107</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-03-20T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">247.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-09T10:31:39.881Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>漫漫长夜 | 漫漫长夜</title><meta name="author" content="Lost丶逝水如风"><meta name="copyright" content="Lost丶逝水如风"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是数据结构？数据结构是一种组织和存储数据的方式，它是一种计算机科学的基础概念，用来管理和操作数据，使得我们可以更有效地查找、插入、删除和处理数据。 比方说，想象你有一堆书要放在书架上。如果你随意扔书，以后要找到某本书就会很困难。但如果你按照某种规则，比如按照书名的字母顺序，将书整齐地摆放在书架上，那么以后找到某本书就会非常容易，这就是一种数据结构的概念。 在计算机中，数据结构也是这样的，它可以">
+<meta property="og:type" content="website">
+<meta property="og:title" content="漫漫长夜">
+<meta property="og:url" content="https://lw-maple.github.io/temp/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html">
+<meta property="og:site_name" content="漫漫长夜">
+<meta property="og:description" content="什么是数据结构？数据结构是一种组织和存储数据的方式，它是一种计算机科学的基础概念，用来管理和操作数据，使得我们可以更有效地查找、插入、删除和处理数据。 比方说，想象你有一堆书要放在书架上。如果你随意扔书，以后要找到某本书就会很困难。但如果你按照某种规则，比如按照书名的字母顺序，将书整齐地摆放在书架上，那么以后找到某本书就会非常容易，这就是一种数据结构的概念。 在计算机中，数据结构也是这样的，它可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lw-maple.github.io/img/coverImg/11.jpg">
+<meta property="article:published_time" content="2023-09-03T09:04:20.466Z">
+<meta property="article:modified_time" content="2023-09-03T09:04:20.466Z">
+<meta property="article:author" content="Lost丶逝水如风">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lw-maple.github.io/img/coverImg/11.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lw-maple.github.io/temp/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '漫漫长夜',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-03 17:04:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/atom-one-dark.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/banners/5.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫漫长夜</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">漫漫长夜</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="什么是数据结构？"><a href="#什么是数据结构？" class="headerlink" title="什么是数据结构？"></a>什么是数据结构？</h1><p>数据结构是一种组织和存储数据的方式，它是一种计算机科学的基础概念，用来管理和操作数据，使得我们可以更有效地查找、插入、删除和处理数据。</p>
+<p>比方说，想象你有一堆书要放在书架上。如果你随意扔书，以后要找到某本书就会很困难。但如果你按照某种规则，比如按照书名的字母顺序，将书整齐地摆放在书架上，那么以后找到某本书就会非常容易，这就是一种数据结构的概念。</p>
+<p>在计算机中，数据结构也是这样的，它可以帮助我们有条不紊地组织和访问数据，提高程序的效率和可读性。</p>
+<p>常见的数据结构包括数组、链表、栈、队列、树等，每种都有自己的特点和用途，根据不同的需求选择合适的数据结构可以让程序更高效地运行。</p>
+<h1 id="什么是ADT"><a href="#什么是ADT" class="headerlink" title="什么是ADT?"></a>什么是ADT?</h1><p><strong>ADT（Abstract Data Type，数据抽象类型）</strong>：ADT是一种数学抽象概念，它描述了数据的逻辑结构和操作，而不涉及具体的实现细节。</p>
+<p>举例：</p>
+<p><strong>ADT - 栈（Stack）</strong>：</p>
+<ul>
+<li>栈是一个抽象数据类型，它具有以下操作：<ul>
+<li><strong>压入（Push）</strong>：将元素放入栈顶。</li>
+<li><strong>弹出（Pop）</strong>：从栈顶移除元素。</li>
+<li><strong>查看栈顶元素（Top）</strong>：获取栈顶的元素但不移除它。</li>
+<li><strong>判断栈是否为空（IsEmpty）</strong>：检查栈内是否有元素。</li>
+</ul>
+</li>
+</ul>
+<p>这里我们只关注栈的逻辑行为，不关心如何在计算机内部实际存储这些数据。</p>
+<h1 id="什么是算法？"><a href="#什么是算法？" class="headerlink" title="什么是算法？"></a>什么是算法？</h1><p>算法就像是计算机的思维方式，它们由一系列清晰的步骤组成，这些步骤被设计成能够完成特定的任务。这些步骤可以包括各种操作，比如数学运算、数据处理、决策和重复。</p>
+<h1 id="数据结构和类有什么区别？"><a href="#数据结构和类有什么区别？" class="headerlink" title="数据结构和类有什么区别？"></a>数据结构和类有什么区别？</h1><p>虽然数据结构和类都与数据有关，但它们的关注点和用途不同。数据结构主要关注数据的组织和操作，而类主要关注对象的属性和行为的定义。在面向对象编程中，数据结构可以作为类的一部分来使用，以实现特定的数据组织和操作，但它们通常是不同的概念。</p>
+<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><p>线性表是一种常见的数据结构，它用来组织和存储一组元素，这些元素之间具有线性的顺序关系。线性表中的元素通常按照一定的次序排列，每个元素都有一个前驱元素和一个后继元素，除了第一个元素没有前驱，最后一个元素没有后继，这种结构类似于一条线。</p>
+<p>数组：数组是一种静态数据结构，它包含一组相同类型的元素，这些元素在内存中是连续存储的。数组的大小在创建时固定，不可动态改变。你可以使用索引来访问数组中的元素，索引从0开始，逐个递增。数组非常适合快速访问元素，但在插入和删除元素时可能需要移动大量的数据。</p>
+<p>链表：链表是一种动态数据结构，它由一系列节点组成，每个节点包含一个元素和一个指向下一个节点的引用（或指针）。链表的大小可以动态增长或减小，因为你可以轻松地插入或删除节点。链表的访问速度相对较慢，因为你需要从头开始遍历链表以找到特定的元素，但插入和删除操作通常比数组更快。</p>
+<ol>
+<li>单链表（Singly Linked List）:<ul>
+<li>单链表是一种线性数据结构，由一系列节点组成。</li>
+<li>每个节点包含两部分：数据和指向下一个节点的引用（指针或链接）。</li>
+<li>单链表的最后一个节点通常指向null，表示链表的结束。</li>
+<li>插入和删除元素的操作效率较高，但查找元素的效率较低，需要从头节点开始遍历。</li>
+</ul>
+</li>
+<li>双链表（Doubly Linked List）:<ul>
+<li>双链表也是一种线性数据结构，与单链表不同的是，每个节点包含两个指针：一个指向前一个节点，一个指向后一个节点。</li>
+<li>双链表支持双向遍历，可以在前后两个方向上进行操作，插入和删除元素的操作更灵活。</li>
+<li>但双链表需要额外的空间来存储前后指针，占用的空间相对多一些。</li>
+</ul>
+</li>
+<li>循环链表（Circular Linked List）:<ul>
+<li>循环链表是一种特殊的链表，其最后一个节点指向链表的头节点，形成一个环。</li>
+<li>循环链表常用于需要循环操作的场景，例如轮播图片展示或任务调度。</li>
+<li>可以在循环链表上进行无限次循环遍历，但需要小心控制循环结束条件，以免无限循环。</li>
+</ul>
+</li>
+</ol>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p>栈（Stack）是一种常见的线性数据结构，它遵循”后进先出”（Last-In-First-Out，LIFO）的原则。这意味着最后进栈的元素将首先被弹出。栈通常用于管理数据的临时存储和控制程序的流程。</p>
+<p>栈包括两个主要操作：</p>
+<ol>
+<li><strong>压栈（Push）</strong>：将元素添加到栈的顶部。这是在栈中插入新元素的操作。</li>
+<li><strong>弹栈（Pop）</strong>：从栈的顶部移除元素。这是取出栈顶元素并将其删除的操作。</li>
+</ol>
+<p>栈可以用于解决许多计算和编程问题，例如：</p>
+<ul>
+<li><p><strong>函数调用</strong>：计算机使用栈来管理函数的调用和返回。每次函数调用时，函数的参数和局部变量都被压栈，当函数返回时，栈顶的数据被弹出，回到上一个函数的上下文。</p>
+</li>
+<li><p><strong>表达式求值</strong>：栈可以用于计算中缀表达式（如1 + 2 * 3）的值。它可以将中缀表达式转换为后缀表达式，然后使用栈来计算后缀表达式的值。</p>
+</li>
+<li><p>栈是一种非常有用的数据结构，用于管理数据的有序存储和控制程序的执行流程。它通常具有简单而高效的特性，使其在编程和计算中广泛应用。</p>
+</li>
+</ul>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>队列（Queue）是计算机科学和数据结构中的一种基本数据结构，用于存储和管理数据元素。它遵循一种特定的数据结构原则，即先进先出（FIFO，First-In-First-Out）原则，这意味着最早进入队列的元素将首先被移出队列，而最后进入队列的元素将最后被移出队列。</p>
+<p>队列的操作包括两个主要部分：</p>
+<ol>
+<li>入队（Enqueue）：将新元素添加到队列的尾部。</li>
+<li>出队（Dequeue）：从队列的头部移除元素。</li>
+</ol>
+<p>以下是一些实际生活中和计算机编程中使用队列的示例：</p>
+<ol>
+<li>打印队列：在打印任务较多的环境中，打印队列用于管理打印任务的顺序。新的打印任务会排队等待，按照它们被提交的顺序进行打印。</li>
+<li>广度优先搜索（BFS）算法：在图论和图搜索中，BFS算法使用队列来遍历图的节点，确保首先访问邻近节点，然后再访问更远的节点。</li>
+</ol>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树（Tree）是计算机科学和数据结构中的一种重要的数据结构，它用于表示<strong>具有层次结构的数据，其中每个元素都有一个父节点和零个或多个子节点</strong>。树的结构类似于现实生活中的树，有一个根节点（root）作为起始点，从根节点延伸出分支，形成不同的层级和分支结构。</p>
+<p>树的基本组成部分包括以下术语：</p>
+<ol>
+<li>根节点（Root）：树的顶部节点，它没有父节点，是树的起始点。</li>
+<li>节点（Node）：树中的每个元素都被称为一个节点，节点可以有一个父节点和零个或多个子节点。</li>
+<li>父节点（Parent Node）：每个节点都有一个父节点，它是位于其下方的节点。</li>
+<li>子节点（Child Node）：每个节点可以有零个或多个子节点，子节点位于父节点下方。</li>
+<li>叶子节点（Leaf Node）：叶子节点是没有子节点的节点，它们位于树的末端。</li>
+<li>子树（Subtree）：子树是树中的一部分，它包含一个节点及其所有后代节点。每个节点都可以看作是一个子树的根节点。</li>
+<li>深度（Depth）：树中节点的深度是从根节点到该节点的唯一路径上的边数。</li>
+<li>高度（Height）：树的高度是树中最深节点的深度。也可以定义为空树的高度为-1。</li>
+</ol>
+<p>不同类型的树结构可以用来解决各种问题，其中一些常见的树类型包括二叉树（Binary Tree）、二叉搜索树（Binary Search Tree）、平衡二叉树（Balanced Binary Tree，如AVL树和红黑树）、树状数组（Binary Indexed Tree）、N叉树（N-ary Tree）等。树结构在计算机科学中用于构建数据结构，例如文件系统，表示层次关系，如家谱树、组织结构图等。</p>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>图由节点（顶点）和边组成，节点表示对象，边表示对象之间的关系。图是一种非常通用的数据结构，它可以用于模拟各种关系型数据，例如社交网络、网络拓扑、路由算法、组织结构、图像处理等领域。</p>
+<p>图的基本概念包括以下要素：</p>
+<ol>
+<li><strong>节点（Vertex）</strong>：图中的每个对象都被称为一个节点。节点可以表示不同的实体，例如人物、城市、网站、计算机等。在图中，节点通常用圆圈或点来表示。</li>
+<li><strong>边（Edge）</strong>：边是连接图中两个节点的线或连接。边表示节点之间的关系。边可以具有方向（有向图）或没有方向（无向图），取决于图的类型。</li>
+<li><strong>有向图（Directed Graph）</strong>：有向图是一种图，其中边具有方向，从一个节点指向另一个节点。这种关系是单向的，表示一种有序的关系。</li>
+<li><strong>无向图（Undirected Graph）</strong>：无向图是一种图，其中边没有方向，即边连接的两个节点之间的关系是双向的，没有箭头指示方向。</li>
+<li><strong>权重（Weight）</strong>：在某些图中，边可以具有权重，表示节点之间的关系的强度或距离。例如，在路网图中，边的权重可以表示道路的长度或行驶时间。</li>
+<li><strong>路径（Path）</strong>：路径是一个节点序列，其中任意两个相邻节点都通过一条边相连。路径可以是有向的或无向的，可以是简单路径（不经过相同节点的路径）或环（起点和终点相同的路径）。</li>
+<li><strong>连通性（Connectivity）</strong>：一个图是连通的，如果从图中的任意一个节点到另一个节点都存在路径。否则，图被称为非连通的。</li>
+</ol>
+<p>图是一种非常强大的数据结构，它在计算机科学和许多领域中都有广泛的应用，如网络设计、社交网络分析、最短路径算法、组织结构建模、数据库查询优化等。图的种类和应用非常丰富，因此图论在计算机科学和离散数学中具有重要地位。</p>
+<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>散列表（Hash Table），也称为哈希表，是一种常见的数据结构，用于实现数据的快速检索和插入。它是基于哈希函数的数据结构，将键（key）映射到值（value）以便进行高效的数据存储和检索。散列表允许在平均情况下实现O(1)的时间复杂度来查找、插入和删除数据。</p>
+<p>以下是散列表的关键概念和特点：</p>
+<ol>
+<li><strong>哈希函数（Hash Function）</strong>：哈希表的核心是哈希函数，它接受一个键作为输入并生成一个索引（称为哈希码或散列值），用于在散列表中查找或存储值。哈希函数应该具有以下特点：<ul>
+<li>快速计算：哈希函数应该能够快速计算出哈希码。</li>
+<li>均匀分布：哈希函数应该能够将键均匀地分散到散列表的不同位置，以减少冲突。</li>
+<li>一致性：相同的输入键应该始终生成相同的哈希码。</li>
+</ul>
+</li>
+<li><strong>哈希表（Hash Table）</strong>：哈希表是一个由数组构成的数据结构，通常包含一个哈希函数和一个存储值的数组。哈希函数确定键在数组中的位置，然后将值存储在该位置。</li>
+<li><strong>碰撞（Collision）</strong>：碰撞是指两个或多个键被哈希函数映射到同一个数组位置的情况。由于哈希函数的输出范围通常小于键的集合，碰撞是不可避免的。处理碰撞是散列表设计中的一个重要问题。</li>
+<li><strong>解决碰撞</strong>：有多种方法可以解决碰撞，其中两种常见的方法是：<ul>
+<li>链接法（Chaining）：每个数组位置维护一个链表（或其他数据结构），多个键映射到同一位置的时候，将它们存储在链表中。</li>
+<li>开放寻址法（Open Addressing）：在发生碰撞时，通过一定的规则直接在散列表中的其他位置寻找空槽来存储冲突的键。</li>
+</ul>
+</li>
+<li><strong>负载因子（Load Factor）</strong>：负载因子是衡量散列表空间利用率的指标。它是已存储键值对数目与散列表总槽数目的比值。负载因子越大，碰撞的概率越高，可能导致性能下降。通常需要动态调整散列表的大小来维持适当的负载因子。</li>
+</ol>
+<p>散列表在许多编程语言和应用中都有广泛的应用，用于快速的查找、插入和删除操作。它们可以用于缓存实现、数据库索引、哈希集合、哈希映射等多种场景，以提高数据操作的效率。</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lost丶逝水如风</div><div class="author-info__description">If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">107</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LW-Maple" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:maplewcw@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">😅由于国内政策原因，博客从Gitee迁移至Github</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/12/2023-3-12-%E3%80%90Blog%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93%E3%80%91/" title="博客项目总结"><img src="/img/coverImg/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客项目总结"/></a><div class="content"><a class="title" href="/2023/03/12/2023-3-12-%E3%80%90Blog%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93%E3%80%91/" title="博客项目总结">博客项目总结</a><time datetime="2023-03-12T02:11:44.000Z" title="发表于 2023-03-12 10:11:44">2023-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/19/2022-11-20-%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91/" title="操作系统"><img src="/img/coverImg/0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2022/11/19/2022-11-20-%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91/" title="操作系统">操作系统</a><time datetime="2022-11-19T07:41:28.000Z" title="发表于 2022-11-19 15:41:28">2022-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/19/2022-10-19-%E3%80%90Nginx%E3%80%91/" title="Nginx"><img src="/img/coverImg/15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nginx"/></a><div class="content"><a class="title" href="/2022/10/19/2022-10-19-%E3%80%90Nginx%E3%80%91/" title="Nginx">Nginx</a><time datetime="2022-10-19T07:41:28.000Z" title="发表于 2022-10-19 15:41:28">2022-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/16/2022-10-16-%E3%80%90%E5%89%91%E6%8C%87Offer(%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84)%E3%80%91/" title="剑指Offer【二叉树中和为某一值的路径】"><img src="/img/coverImg/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指Offer【二叉树中和为某一值的路径】"/></a><div class="content"><a class="title" href="/2022/10/16/2022-10-16-%E3%80%90%E5%89%91%E6%8C%87Offer(%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84)%E3%80%91/" title="剑指Offer【二叉树中和为某一值的路径】">剑指Offer【二叉树中和为某一值的路径】</a><time datetime="2022-10-16T00:55:56.000Z" title="发表于 2022-10-16 08:55:56">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/2022-10-14-%E3%80%90%E5%89%91%E6%8C%87Offer(%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0)%E3%80%91/" title="剑指Offer【数组中数字出现的次数】"><img src="/img/coverImg/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指Offer【数组中数字出现的次数】"/></a><div class="content"><a class="title" href="/2022/10/14/2022-10-14-%E3%80%90%E5%89%91%E6%8C%87Offer(%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0)%E3%80%91/" title="剑指Offer【数组中数字出现的次数】">剑指Offer【数组中数字出现的次数】</a><time datetime="2022-10-14T07:02:56.000Z" title="发表于 2022-10-14 15:02:56">2022-10-14</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CS/"><span class="card-category-list-name">CS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaEE/"><span class="card-category-list-name">JavaEE</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaSE%E9%AB%98%E7%BA%A7/"><span class="card-category-list-name">JavaSE高级</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Leetcode/"><span class="card-category-list-name">Leetcode</span><span class="card-category-list-count">78</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Nginx/"><span class="card-category-list-name">Nginx</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"><span class="card-category-list-name">分布式</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%80%BB%E7%BB%93/"><span class="card-category-list-name">总结</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">3</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%F0%9F%94%A5-LeetCode-%E7%83%AD%E9%A2%98-HOT-100/" style="font-size: 1.45em; color: rgb(141, 95, 99)">🔥 LeetCode 热题 HOT 100</a><a href="/tags/%E5%89%91%E6%8C%87Offer/" style="font-size: 1.35em; color: rgb(142, 184, 153)">剑指Offer</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(35, 45, 20)">Git</a><a href="/tags/ZooKeeper/" style="font-size: 1.15em; color: rgb(58, 62, 14)">ZooKeeper</a><a href="/tags/Dubbo/" style="font-size: 1.15em; color: rgb(104, 124, 35)">Dubbo</a><a href="/tags/Nginx/" style="font-size: 1.15em; color: rgb(52, 172, 48)">Nginx</a><a href="/tags/SSM/" style="font-size: 1.15em; color: rgb(11, 110, 34)">SSM</a><a href="/tags/SpringBoot/" style="font-size: 1.25em; color: rgb(92, 28, 137)">SpringBoot</a><a href="/tags/RabbitMQ/" style="font-size: 1.15em; color: rgb(22, 77, 110)">RabbitMQ</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(77, 56, 19)">操作系统</a><a href="/tags/Spring/" style="font-size: 1.15em; color: rgb(25, 153, 48)">Spring</a><a href="/tags/MySQL/" style="font-size: 1.25em; color: rgb(179, 75, 52)">MySQL</a><a href="/tags/SpringSecurity/" style="font-size: 1.15em; color: rgb(123, 152, 21)">SpringSecurity</a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.15em; color: rgb(143, 15, 138)">项目</a><a href="/tags/JavaWeb/" style="font-size: 1.15em; color: rgb(30, 13, 112)">JavaWeb</a><a href="/tags/SpringMVC/" style="font-size: 1.15em; color: rgb(11, 19, 166)">SpringMVC</a><a href="/tags/MyBatis/" style="font-size: 1.15em; color: rgb(196, 147, 46)">MyBatis</a><a href="/tags/Redis/" style="font-size: 1.15em; color: rgb(173, 184, 132)">Redis</a><a href="/tags/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(8, 187, 123)">23种设计模式</a><a href="/tags/JUC/" style="font-size: 1.15em; color: rgb(24, 173, 83)">JUC</a><a href="/tags/JVM/" style="font-size: 1.15em; color: rgb(82, 162, 30)">JVM</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">20</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">13</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">107</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-03-20T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">247.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-09T10:31:39.881Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Lost丶逝水如风</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
